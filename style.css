@@ -1,6 +1,6 @@
 /* ===== Body ===== */
 body {
-  font-family: sans-serif;
+  font-family: 'IBM Plex Mono', monospace;
   margin: 0;
   padding: 0rem;            
   background: #c1d5ab;  
@@ -10,33 +10,54 @@ body {
 /* ===== HEADER BOX ===== */
 
 header {
-  background: #dde5d5;      
+
+  background: #9db3a2;  /*light greenish white colour*/  
+  height: 90vh; /*changes the height of the header box*/
+  display: flex;
+  justify-content: center;
+  position: relative;
+  overflow: hidden; /*keep particles inside header*/
   padding: 1rem 2rem;         
-  border-radius: 0px;    
+  border-radius: 0px;
+  
     }
 
         /* Header text */
-        h1, h2 {
+        h1 {
         color: #ffffff;
         text-shadow: 2px 2px 5px rgba(0, 0, 0, 1.5);
         margin: 0;                  /* remove extra spacing */
+        font-size: 3rem;
+        }
+
+        /* SUBheader text */
+        h2 {
+        color: #5a965f;
+        /*text-shadow: 2px 2px 5px rgba(0, 0, 0, 1.5);*/
+        margin: 0;                  /* remove extra spacing */
+        font-size: 2rem;
         }
 
         /* Profile image */
         .profile-pic {
-            width: 120px;
+            width: 180px;
             height: auto;
             border-radius: 0%;         /* circular image */
             filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
-            margin: 0;                  /* remove default margins */
+            position: relative;
+            top: 80px;
+            margin: 90px;                  /* remove default margins */
+            animation: neonGradient 5s infinite alternate;
+            
         }
 
         /* Flex container for text + image */
         .header-content {
             display: flex;
+            flex-direction: column;     /*stack vertically*/
             align-items: center;       /* vertically center text and image */
             justify-content: flex-start; /* left-align the content */
-            gap: 3rem;                 /* space between text and emoji */
+            gap: 1rem;                 /* space between text and emoji */
             flex-wrap: wrap;           /* allows wrapping on smaller screens */
         }
 
@@ -45,10 +66,10 @@ header {
             font-size: 2.5rem;              /* makes it bigger */
             display: inline-block;          /* allows rotation */
             transform-origin: 70% 70%;      /* where the wave pivots */
-            animation: waveHand 1.5s infinite ease-in-out;
+            animation: waveHand 4.5s infinite ease-in-out;
             position: relative; /*moves the position of the hand without interfering with animation*/
-            top: -8px;          /*moves it up*/
-            left: -40px;        /*moves it left*/
+            top: -115px;          /*moves it vertical*/
+            left: 210px;        /*moves it horizontal*/
         }
 
         /* Wave animation keyframes */
@@ -65,11 +86,11 @@ header {
 
         /* Social icons container */
         .socials {
-            position: absolute;      /* keep them in the top-right corner */
+            position: absolute;         /* keep them in the top-right corner */
             top: 4rem;
-            right: 3rem;
+            left: 3rem;                 /*puts all social icons on the left side*/
             display: flex;
-            gap: 1rem;               /* space between icons */
+            gap: 1rem;                  /* space between icons */
         }
 
         /* Each icon */
@@ -86,6 +107,19 @@ header {
         transform: scale(1.1);  /* grows slightly on hover */
         }
 
+        /* Particles */
+        .particle {
+            position: absolute;
+            width: 5px;                /* a bit bigger so they are visible */
+            height: 5px;
+            background: rgba(255,255,255,0.5);
+            border-radius: 50%;
+            animation: drift linear infinite;
+        }
+
+
+        /*-------------KEY FRAMES PASTED BELOW-------------*/
+
         /* Spinning animation */
         @keyframes slowSpin {
         from {
@@ -96,10 +130,66 @@ header {
         }
         }
 
+        /* Neon glow (GRADIENT) keyframes */
+        @keyframes neonGradient {
+            0% {
+                filter: drop-shadow(0 0 10px rgba(247, 247, 247, 0.7))   
+                        drop-shadow(0 0 10px rgba(240, 238, 167, 0.87)); 
+            }
+            25% {
+                filter: drop-shadow(0 0 10px rgba(237, 245, 245, 0.87))
+                        drop-shadow(0 0 10px rgba(224, 238, 173, 0.7)); 
+            }
+            50% {
+                filter: drop-shadow(0 0 10px rgba(240, 238, 167, 0.87))  
+                        drop-shadow(0 0 10px rgba(247, 247, 247, 0.7)); 
+            }
+            75% {
+                filter: drop-shadow(0 0 10px rgba(237, 245, 245, 0.87))   
+                        drop-shadow(0 0 10px rgba(240, 238, 167, 0.87));
+            }
+            100% {
+                filter: drop-shadow(0 0 10px rgba(240, 238, 167, 0.87))   
+                        drop-shadow(0 0 10px rgba(247, 247, 247, 0.7)); 
+            }
+        }
+
+        
+
+@keyframes drift {
+  0% { transform: translate(0,0); opacity: 1; }
+  100% { transform: translate(var(--x), var(--y)); opacity: 0; }
+}
+
+
 
 /* ===== Sections ===== */
 section {
   padding: 1rem;
   max-width: 1400px;
   margin: auto;
+}
+
+/* ===== Right-side NAVIGATIONS headings menu ===== */
+.side-nav {
+  position: fixed;
+  top: 5rem;    /*distance from the top margin */
+  right: 5rem; /*distance from the right margin*/
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 1.1rem;
+  z-index: 1000;
+}
+
+.side-nav a {
+  color: #1c4b20;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+/* Right-side NAVIGATIONS HOVER ANIMATIONS  */
+.side-nav a:hover {
+  color: #ffffff;
 }
