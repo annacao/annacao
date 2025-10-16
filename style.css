@@ -193,3 +193,54 @@ section {
 .side-nav a:hover {
   color: #ffffff;
 }
+
+
+
+
+
+
+
+
+/* ================= MOBILE FRIENDLY CHANGES ================= */
+@media (max-width: 768px) {
+  /* Make profile image smaller */
+  .profile-pic {
+    width: 40vw;      /* scales with screen width */
+    margin: 5vh auto;  /* smaller vertical margin */
+    top: 50px;         /* reduce top offset */
+  }
+
+  /* Reduce header title size */
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.5rem; }
+
+  /* Adjust wave emoji */
+  .wave {
+    font-size: 2rem;
+    top: -70px;
+    left: 120px;
+  }
+
+  /* Move socials to top-center instead of left side */
+  .socials {
+    top: auto;
+    left: auto;
+    position: static;
+    justify-content: center;
+    margin: 1rem 0;
+  }
+
+  /* Stack side-nav vertically and move to bottom */
+  .side-nav {
+    position: static;        /* follow normal flow */
+    flex-direction: column;  /* vertical stack */
+    gap: 1rem;
+    margin: 1rem auto;
+    text-align: center;
+  }
+
+  /* Make side-nav links smaller */
+  .side-nav a {
+    font-size: 1rem;
+  }
+}
