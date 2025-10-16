@@ -171,26 +171,31 @@ section {
 }
 
 /* ===== Right-side NAVIGATIONS headings menu ===== */
-.side-nav {
+.nav-links {
   position: fixed;
-  top: 5rem;    /*distance from the top margin */
-  right: 5rem; /*distance from the right margin*/
+  top: 5rem;
+  right: 5rem;
   display: flex;
   flex-direction: row;
   gap: 2rem;
   font-family: 'IBM Plex Mono', monospace;
   font-size: 1.1rem;
   z-index: 1000;
+  list-style: none; /*removes bullets*/
+  margin: 0;        /*removes bullets*/
+  padding: 0;       /*removes bullets*/
 }
 
-.side-nav a {
+.nav-links a {
   color: #1c4b20;
   text-decoration: none;
   transition: color 0.3s;
 }
 
-/* Right-side NAVIGATIONS HOVER ANIMATIONS  */
-.side-nav a:hover {
+.nav-links a:hover {
   color: #ffffff;
 }
+
+
+
 
