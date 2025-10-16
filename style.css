@@ -45,7 +45,7 @@ header {
 
         /* Profile image */
         .profile-pic {
-            width: 180px;
+            width: 200px;
             height: auto;
             border-radius: 0%;         /* circular image */
             filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
