@@ -1,0 +1,105 @@
+/* ===== Body ===== */
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0rem;            
+  background: #c1d5ab;  
+  color: #000000;         
+}
+
+/* ===== HEADER BOX ===== */
+
+header {
+  background: #dde5d5;      
+  padding: 1rem 2rem;         
+  border-radius: 0px;    
+    }
+
+        /* Header text */
+        h1, h2 {
+        color: #ffffff;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 1.5);
+        margin: 0;                  /* remove extra spacing */
+        }
+
+        /* Profile image */
+        .profile-pic {
+            width: 120px;
+            height: auto;
+            border-radius: 0%;         /* circular image */
+            filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
+            margin: 0;                  /* remove default margins */
+        }
+
+        /* Flex container for text + image */
+        .header-content {
+            display: flex;
+            align-items: center;       /* vertically center text and image */
+            justify-content: flex-start; /* left-align the content */
+            gap: 3rem;                 /* space between text and emoji */
+            flex-wrap: wrap;           /* allows wrapping on smaller screens */
+        }
+
+        /* Wave emoji style */
+        .wave {
+            font-size: 2.5rem;              /* makes it bigger */
+            display: inline-block;          /* allows rotation */
+            transform-origin: 70% 70%;      /* where the wave pivots */
+            animation: waveHand 1.5s infinite ease-in-out;
+            position: relative; /*moves the position of the hand without interfering with animation*/
+            top: -8px;          /*moves it up*/
+            left: -40px;        /*moves it left*/
+        }
+
+        /* Wave animation keyframes */
+            @keyframes waveHand {
+            0% { transform: rotate(0deg); }
+            10% { transform: rotate(14deg); }
+            20% { transform: rotate(-8deg); }
+            30% { transform: rotate(14deg); }
+            40% { transform: rotate(-4deg); }
+            50% { transform: rotate(10deg); }
+            60% { transform: rotate(0deg); }
+            100% { transform: rotate(0deg); }
+        }
+
+        /* Social icons container */
+        .socials {
+            position: absolute;      /* keep them in the top-right corner */
+            top: 4rem;
+            right: 3rem;
+            display: flex;
+            gap: 1rem;               /* space between icons */
+        }
+
+        /* Each icon */
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            transition: transform 0.3s ease;
+            animation: slowSpin 10s linear infinite; /* slow rotation */
+            cursor: pointer;
+        }
+
+        /* Add hover effect */
+        .social-icon:hover {
+        transform: scale(1.1);  /* grows slightly on hover */
+        }
+
+        /* Spinning animation */
+        @keyframes slowSpin {
+        from {
+         transform: rotate(0deg);
+        }
+        to {
+        transform: rotate(360deg);
+        }
+        }
+
+
+/* ===== Sections ===== */
+section {
+  padding: 1rem;
+  max-width: 1400px;
+  margin: auto;
+}
