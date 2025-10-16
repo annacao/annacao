@@ -3,7 +3,7 @@ body {
   font-family: 'IBM Plex Mono', monospace;
   margin: 0;
   padding: 0rem;            
-  background: #c1d5ab;  
+  background: #111111;  
   color: #000000;         
 }
 
@@ -32,10 +32,15 @@ header {
 
         /* SUBheader text */
         h2 {
-        color: #5a965f;
-        /*text-shadow: 2px 2px 5px rgba(0, 0, 0, 1.5);*/
+        color: #29702f;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
         margin: 0;                  /* remove extra spacing */
-        font-size: 2rem;
+        font-size: 35px;
+        }
+
+        /*decriptions about me (about, experience, skills, hobbies, contact*/
+        main {
+            color:azure
         }
 
         /* Profile image */
@@ -51,15 +56,27 @@ header {
             
         }
 
-        /* Flex container for text + image */
+    
+        /* Flex container for text + image + and decription */
         .header-content {
             display: flex;
             flex-direction: column;     /*stack vertically*/
-            align-items: center;       /* vertically center text and image */
+            align-items: center;       /* vertically center text and image & descriiption */
             justify-content: flex-start; /* left-align the content */
             gap: 1rem;                 /* space between text and emoji */
             flex-wrap: wrap;           /* allows wrapping on smaller screens */
         }
+
+        .typed-cursor {
+        color: #4d6352;
+        animation: blink 0.8s infinite; /* slower or faster blink */
+    
+        }
+
+        .typewriter {
+        margin-top: -110px; /* pushes the typed text down */
+        
+}
 
         /* Wave emoji style */
         .wave {
@@ -83,6 +100,8 @@ header {
             60% { transform: rotate(0deg); }
             100% { transform: rotate(0deg); }
         }
+
+    
 
         /* Social icons container */
         .socials {
@@ -170,22 +189,21 @@ section {
   margin: auto;
 }
 
-/* ===== Right-side NAVIGATIONS headings menu ===== */
+/* Right-side NAV LINKS – always visible */
 .nav-links {
-  position: fixed;
-  top: 5rem;
-  right: 5rem;
+  position: fixed;       /* keeps it on screen while scrolling */
+  top: 4rem;             /* distance from top */
+  right: 4rem;           /* distance from right */
   display: flex;
-  flex-direction: row;
-  gap: 2rem;
+  flex-direction: row;   /* horizontal layout */
+  gap: 2rem;             /* space between links */
   font-family: 'IBM Plex Mono', monospace;
   font-size: 1.1rem;
-  z-index: 1000;
-  list-style: none; /*removes bullets*/
-  margin: 0;        /*removes bullets*/
-  padding: 0;       /*removes bullets*/
+  list-style: none;      /* remove bullets */
+  z-index: 1000;         /* make sure it stays above other content */
 }
 
+/* Links style */
 .nav-links a {
   color: #1c4b20;
   text-decoration: none;
@@ -195,6 +213,7 @@ section {
 .nav-links a:hover {
   color: #ffffff;
 }
+
 
 
 

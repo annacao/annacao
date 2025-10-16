@@ -1,3 +1,4 @@
+// ===== PARTICLES =====
 window.addEventListener("load", () => {
     const header = document.querySelector("header");
     const particleCount = 50; // number of particles
@@ -12,15 +13,16 @@ window.addEventListener("load", () => {
         particle.style.top = top + "px";
         particle.style.left = left + "px";
 
-        // Random drift distance
+        // Random movement offsets
         const x = (Math.random() - 0.5) * 300;
         const y = Math.random() * 500;
         particle.style.setProperty('--x', x + "px");
         particle.style.setProperty('--y', y + "px");
 
-        // Random duration
+        // Random animation duration
         particle.style.animationDuration = (5 + Math.random() * 5) + "s";
 
         header.appendChild(particle);
     }
 });
+
