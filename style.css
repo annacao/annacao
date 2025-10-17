@@ -191,13 +191,12 @@ section {
 
 /* Right-side NAV LINKS – always visible */
 .nav-links {
-  position: fixed;       /* keeps it on screen while scrolling */
-  top: 4rem;             /* distance from top */
-  right: 4rem;           /* distance from right */
+  position: absolute;       /* keeps it on screen while scrolling */
+  top: 3.4rem;             /* distance from top */
+  right: 3.4rem;           /* distance from right */
   display: flex;
   flex-direction: row;   /* horizontal layout */
   gap: 2rem;             /* space between links */
-  font-family: 'IBM Plex Mono', monospace;
   font-size: 1.1rem;
   list-style: none;      /* remove bullets */
   z-index: 1000;         /* make sure it stays above other content */
