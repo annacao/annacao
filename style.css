@@ -1,17 +1,19 @@
-/* ===== Body ===== */
-body {
-  font-family: "IBM Plex Mono", monospace;
+
+/* ===== GLOBAL STYLES ===== */
+html, body {
+  height: 100%;       /* make the body take full viewport height */
   margin: 0;
-  padding: 0rem;
+  padding: 0;
+  font-family: "IBM Plex Mono", monospace;
   background: #111111;
-  color: #000000;
+  color: #ffffff;
 }
 
 /* ===== HEADER BOX ===== */
 
 header {
-  background: #9db3a2; /*light greenish white colour*/
-  height:90vh; /*changes the height of the header box*/
+  background: #9db3a2; /*light greenish white colour 9db3a2*/
+  height: 60%; /*changes the height of the header box*/
   display: flex;
   justify-content: center;
   position: relative;
@@ -57,7 +59,6 @@ main {
   align-items: center; /* vertically center text and image & descriiption */
   justify-content: center; /* centers vertically */
   gap: 1rem; /* space between text and emoji */
-  flex-wrap: wrap; /* allows wrapping on smaller screens */
   height: 100%; /* make it fill the header's height */
   position: relative; /* keep wave and typewriter positioned relative */
   left: 0;
@@ -71,6 +72,7 @@ main {
   margin-left: 20px;
 }
 
+/*the blinking curser in the header*/
 .typed-cursor {
   color: #4d6352;
   animation: blink 0.8s infinite; /* slower or faster blink */
@@ -183,7 +185,7 @@ main {
   }
 }
 
-/* Neon glow (GRADIENT) keyframes */
+/* Neon glow (IMAGE GRADIENT) keyframes */
 @keyframes neonGradient {
   0% {
     filter: drop-shadow(0 0 10px rgba(247, 247, 247, 0.7))
@@ -225,89 +227,53 @@ section {
   margin: auto;
 }
 
-/*applies font properties to each paragraph in the holographic elements */
-.holographic-about, .holographic-about p,
-.holographic-experience, .holographic-experience p,
-.holographic-skills, .holographic-skills p,
-.holographic-hobbies, .holographic-hobbies p,
-.holographic-contact, .holographic-contact p{
-  font-family: "Montserrat", sans-serif; /* Montserrat first, fallback is sans-serif */
-  font-weight: 300; /* Extra light */
-  font-size: 14.6px;
-  letter-spacing: 1px;
-  line-height: 1.5;
-  text-shadow: 1px 1px 2px rgba(0,0,0,3);
+.card-container {
+  font-family:"Montserrat", "sans-serif";
+
+  display: flex;           /* layout children horizontally */
+  gap: 70px;               /* space between cards */
+  justify-content: center; /* center the cards */
+  padding: 2rem;
   
 }
 
-.holographic-about{
-    background:#7e9782;
-    padding: 2rem;
-    border-radius: 1rem;
-    margin:4rem auto; /*auto centers the container*/
-    width: 50%;
-    
-
+.about-card {
+  width: 200px;
+  background-color:rgb(130, 161, 134);
+  border-radius: 2rem;
+  padding: 8px;
+}
+.about-card h3 {
+  text-align: center;
 }
 
-.holographic-about:hover{
-    transform:scale(1.05);
-    box-shadow:0 0 20px rgba(192, 202, 132, 0.842)
+.play-card {
+  width: 200px;
+  background-color:rgb(130, 161, 134);
+  border-radius:2rem;
+  padding:8px;
+}
+.play-card h3 {
+  text-align: center;
 }
 
-.holographic-experience{
-    background:#7e9782;
-    padding: 2rem;
-    border-radius: 1rem;
-    margin:4rem auto; /*auto centers the container*/
-    width: 50%;
-
+.contact-card {
+  width: 200px;
+  background-color:rgb(130, 161, 134);
+  border-radius: 2rem;
+  padding:8px;
 }
 
-.holographic-experience:hover{
-    transform:scale(1.05);
-    box-shadow:0 0 20px rgba(192, 202, 132, 0.842)
+.contact-card h3 {
+  text-align: center;
 }
 
-.holographic-skills{
-    background:#7e9782;
-    padding: 2rem;
-    border-radius: 1rem;
-    margin:4rem auto; /*auto centers the container*/
-    width: 50%;
-
-}
-
-.holographic-skills:hover{
-    transform:scale(1.05);
-    box-shadow:0 0 20px rgba(192, 202, 132, 0.842)
-}
-
-.holographic-hobbies{
-    background:#7e9782;
-    padding: 2rem;
-    border-radius: 1rem;
-    margin:4rem auto; /*auto centers the container*/
-    width: 50%;
-
-}
-
-.holographic-hobbies:hover{
-    transform:scale(1.05);
-    box-shadow:0 0 20px rgba(192, 202, 132, 0.842)
-}
-
-.holographic-contact{
-    background:#7e9782;
-    padding: 2rem;
-    border-radius: 1rem;
-    margin:4rem auto; /*auto centers the container*/
-    width: 50%;
-
-}
-
-.holographic-contact:hover{
-    transform:scale(1.05);
-    box-shadow:0 0 20px rgba(192, 202, 132, 0.842)
-    
+footer {
+  height:3vh;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  background: #222;
+  color: #fff;
+  font-size: 12px;
 }
