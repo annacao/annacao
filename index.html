@@ -1,40 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <title>Anna's Portfolio</title>
+    <meta property="og:image" content="annasportrait.png" />
 
-<head>
-  <title> Anna's Portfolio</title> 
-  <meta property="og:image" content="annasportrait.png"> 
+    <!-- header font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- imports the typewriter Typed.js library from the internet -->
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anna Cao | Personal Website</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-  <!-- header font -->
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-  <!-- imports the typewriter Typed.js library from the internet -->
-  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Anna Cao | Personal Website</title>
-  <link rel="stylesheet" href="style.css"
-  >
+  <body>
+    <!-- moving particles animation -->
+    <script src="script.js"></script>
 
-</head>
+    <header>
+      <div class="header-content">
+        <img
+          src="images/annasportrait.png"
+          alt="Anna Cao"
+          class="profile-pic"
+        />
+        <!-- The picture of yourself -->
 
-<body>
-
- <!-- moving particles animation -->
- <script src="script.js"></script>
-
-
-
-
-
-<header>
-
-    <div class = "header-content">
-
-        <img src="images/annasportrait.png" alt="Anna Cao" class="profile-pic">            <!-- The picture of yourself -->
-        
-        <div class = "header-text">
-          <h1>Hi, I’m Anna!</h1>     <!-- The title on your webpage / introduction -->
+        <div class="header-text">
+          <h1>Hi, I’m Anna!</h1>
+          <!-- The title on your webpage / introduction -->
           <span class="wave">👋</span>
         </div>
 
@@ -45,82 +47,109 @@
 
         <!-- cycles through the words “Programming,” “3d Printing,” and “Explorer”, -->
         <script>
-          var typed = new Typed(".auto-type",{
-            strings : ["Creator", "Designer", "Life-long Learner^3000"], // last part pauses 3 seconds before deleting
-            typeSpeed : 150,
-            backSpeed : 150, 
-            loop : true
+          var typed = new Typed(".auto-type", {
+            strings: ["Creator", "Designer", "Life-long Learner^3000"], // last part pauses 3 seconds before deleting
+            typeSpeed: 150,
+            backSpeed: 150,
+            loop: true,
           });
         </script>
+      </div>
 
-    </div>
+      <!-- Social icons -->
 
-    <!-- Social icons -->
+      <div class="socials">
+        <a href="https://github.com/annacao" target="_blank">
+          <img src="images/githubvector.png" alt="GitHub" class="social-icon" />
+        </a>
+        <a href="https://www.linkedin.com/in/annacao-li/" target="_blank">
+          <img
+            src="images/linkedinvector.png"
+            alt="LinkedIn"
+            class="social-icon"
+          />
+        </a>
+        <a href="https://www.instagram.com/annaacao/" target="_blank">
+          <img
+            src="images/instagramvector.png"
+            alt="Instagram"
+            class="social-icon"
+          />
+        </a>
+        <a href="https://www.youtube.com/@thatrandomgiirl" target="_blank">
+          <img
+            src="images/youtubevector.png"
+            alt="GitHub"
+            class="social-icon"
+          />
+        </a>
+      </div>
 
-        <div class="socials">
+      <!-- Right-side headings menu, which will stay inside the header (ul=unordered list) id= js target-->
+      <ul class="nav-links" id="navbar">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#hobbies">Hobbies</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </header>
 
-            <a href="https://github.com/annacao" target="_blank">
-                <img src="images/githubvector.png" alt="GitHub" class="social-icon">
-            </a>
-            <a href="https://www.linkedin.com/in/annacao-li/" target="_blank">
-                <img src="images/linkedinvector.png" alt="LinkedIn" class="social-icon">
-            </a>
-            <a href="https://www.instagram.com/annaacao/" target="_blank">
-                <img src="images/instagramvector.png" alt="Instagram" class="social-icon">
-            </a>
-            <a href="https://www.youtube.com/@thatrandomgiirl" target="_blank">
-                <img src="images/youtubevector.png" alt="GitHub" class="social-icon">
+    <main>
+      <section class="card" id="about">
+        <h3>About Me</h3>
+        <p>
+          A curious tinkerer who can’t resist turning ideas into projects (and
+          occasionally chaos). A self-proclaimed jack-of-all-trades, I’m into 3D
+          printing, dabbling in code, and soaking up the sun in the garden,
+          where I also tend to my pet quails. I have a miniature pinscher, Zoe,
+          who insists on being the center of my universe. When we’re not
+          scheming together, I’m all about creating experiences and sharing them
+          with anyone who’s brave enough to join in.
+        </p>
+      </section>
 
-            </a>
+      <section class="card" id="experience">
+        <h3>Experience</h3>
+        <p>
+          I’ve worn a few hats (sometimes literally) in my professional
+          adventures. From hands-on work in warehouse and inventory management
+          at Eminence, to field data scanning at Pensa, and even patrolling the
+          streets as a VPD cadet, I love rolling up my sleeves and figuring out
+          how things tick. Add a dash of tech projects and UX design to the mix,
+          and you’ve got a curious tinkerer who thrives on learning,
+          problem-solving, and making things work.
+        </p>
+      </section>
 
-        </div>
+      <section class="card" id="skills">
+        <h3>Skills</h3>
+        <p>
+          A versatile skill set that blends hands-on and digital expertise: 3D
+          printing, coding, UX design, tech problem-solving, and organization.
+          Sharp attention to detail and a fast learning curve let me tackle
+          challenges efficiently and creatively.
+        </p>
+      </section>
 
-            <!-- Right-side headings menu, which will stay inside the header (ul=unordered list) id= js target-->
-            <ul class="nav-links" id="navbar"> 
-            <li> <a href="#about">About</a> </li>
-            <li> <a href="#experience">Experience</a> </li>
-            <li> <a href="#skills">Skills</a> </li>
-            <li> <a href="#hobbies">Hobbies</a> </li>
-            <li> <a href="#contact">Contact</a> </li>
-            </ul>
+      <section class="card" id="hobbies">
+        <h3>Hobbies</h3>
+        <p>
+          I like to mix it up with hobbies that make people tilt their heads in
+          curiosity. From 3D printing little creations and coding side projects
+          to tending my Vancouver garden and caring for my pet quails, I’m
+          always exploring new ways to tinker, learn, and have fun. Sometimes in
+          ways that surprise people.
+        </p>
+      </section>
 
-    
-</header> 
-
-
-
-  <main>
-
-
-    <section class = "card" id="about">
-      <h3>About Me</h3>
-      <p>A curious tinkerer who can’t resist turning ideas into projects (and occasionally chaos). A self-proclaimed jack-of-all-trades, I’m into 3D printing, dabbling in code, and soaking up the sun in the garden, where I also tend to my pet quails. I have a miniature pinscher, Zoe, who insists on being the center of my universe. When we’re not scheming together, I’m all about creating experiences and sharing them with anyone who’s brave enough to join in.</p>
-    </section>
-
-    <section class = "card" id="experience">
-      <h3>Experience</h3>
-      <p>I’ve worn a few hats (sometimes literally) in my professional adventures. From hands-on work in warehouse and inventory management at Eminence, to field data scanning at Pensa, and even patrolling the streets as a VPD cadet, I love rolling up my sleeves and figuring out how things tick. Add a dash of tech projects and UX design to the mix, and you’ve got a curious tinkerer who thrives on learning, problem-solving, and making things work.</p>
-    </section>
-
-    <section class = "card" id="skills">
-      <h3>Skills</h3>
-      <p>A versatile skill set that blends hands-on and digital expertise: 3D printing, coding, UX design, tech problem-solving, and organization. Sharp attention to detail and a fast learning curve let me tackle challenges efficiently and creatively.</p>
-    </section>
-
-    <section class = "card" id="hobbies">
-      <h3>Hobbies</h3>
-      <p>I like to mix it up with hobbies that make people tilt their heads in curiosity. From 3D printing little creations and coding side projects to tending my Vancouver garden and caring for my pet quails, I’m always exploring new ways to tinker, learn, and have fun. Sometimes in ways that surprise people.</p>
-    </section>
-
-    <section class = "card" id="contact">
-      <h3>Contact</h3>
-      <p>If you’d like to get in touch, feel free to send me a message! Don't worry, your data will remain private.</p>
-
-    
-
-    </section>
-  </main>
-
-
-</body>
+      <section class="card" id="contact">
+        <h3>Contact</h3>
+        <p>
+          If you’d like to get in touch, feel free to send me a message! Don't
+          worry, your data will remain private.
+        </p>
+      </section>
+    </main>
+  </body>
 </html>
