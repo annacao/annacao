@@ -228,45 +228,64 @@ section {
 }
 
 .card-container {
-  font-family:"Montserrat", "sans-serif";
-
   display: flex;           /* layout children horizontally */
-  gap: 70px;               /* space between cards */
+  gap: 2rem;               /* space between cards */
   justify-content: center; /* center the cards */
   padding: 2rem;
-  
+  flex-wrap: wrap;         /* wrap cards on smaller screens */
 }
 
-.about-card {
-  width: 200px;
-  background-color:rgb(130, 161, 134);
-  border-radius: 2rem;
-  padding: 8px;
+.flip-card {
+  width: 200px;            /* fixed width */
+  height: 300px;           /* fixed height */
+  perspective: 1000px;     /* gives 3D depth */
 }
-.about-card h3 {
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  border-radius: 1rem;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  font-family: "Montserrat", sans-serif;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 1rem;
+}
+
+/* Front side */
+.flip-card-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1rem;
+}
+
+/* Back side */
+.flip-card-back {
+  background-color: rgb(100, 130, 104);
+  color: white;
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
+  padding: 10px;
+  border-radius: 1rem;
 }
 
-.play-card {
-  width: 200px;
-  background-color:rgb(130, 161, 134);
-  border-radius:2rem;
-  padding:8px;
-}
-.play-card h3 {
-  text-align: center;
-}
-
-.contact-card {
-  width: 200px;
-  background-color:rgb(130, 161, 134);
-  border-radius: 2rem;
-  padding:8px;
-}
-
-.contact-card h3 {
-  text-align: center;
-}
 
 footer {
   height:3vh;
