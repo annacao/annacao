@@ -17,7 +17,7 @@ header {
   justify-content: center;
   position: relative;
   overflow: hidden; /*keep particles inside header*/
-  padding: 1rem 2rem;         
+  padding: 0;         
   border-radius: 0px;
   
     }
@@ -29,6 +29,7 @@ header {
         margin: 0;                  /* remove extra spacing */
         font-size: 3rem;
         }
+
 
         /* SUBheader text */
         h2 {
@@ -49,9 +50,6 @@ header {
             height: auto;
             border-radius: 0%;         /* circular image */
             filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
-            position: relative;
-            top: 80px;
-            margin: 90px;                  /* remove default margins */
             animation: neonGradient 5s infinite alternate;
             
         }
@@ -60,11 +58,22 @@ header {
         /* Flex container for text + image + and decription */
         .header-content {
             display: flex;
-            flex-direction: column;     /*stack vertically*/
+            flex-direction: column;    /*stack vertically*/
             align-items: center;       /* vertically center text and image & descriiption */
-            justify-content: flex-start; /* left-align the content */
+            justify-content: center;   /* centers vertically */
             gap: 1rem;                 /* space between text and emoji */
             flex-wrap: wrap;           /* allows wrapping on smaller screens */
+            height: 100%;              /* make it fill the header's height */
+            position:relative;         /* keep wave and typewriter positioned relative */
+            left:0;
+        }
+
+        /*hi im anna (wave)*/
+        .header-text {
+            display:flex;
+            align-items: center;
+            gap:0.5rem;
+            margin-left:20px;
         }
 
         .typed-cursor {
@@ -73,10 +82,12 @@ header {
     
         }
 
-        .typewriter {
-        margin-top: -110px; /* pushes the typed text down */
-        
-}
+        .header-text {
+            display:flex;
+            align-items:center;
+            gap:0.5rem;
+        }
+
 
         /* Wave emoji style */
         .wave {
@@ -85,8 +96,7 @@ header {
             transform-origin: 70% 70%;      /* where the wave pivots */
             animation: waveHand 4.5s infinite ease-in-out;
             position: relative; /*moves the position of the hand without interfering with animation*/
-            top: -115px;          /*moves it vertical*/
-            left: 210px;        /*moves it horizontal*/
+
         }
 
         /* Wave animation keyframes */
@@ -106,8 +116,8 @@ header {
         /* Social icons container */
         .socials {
             position: absolute;         /* keep them in the top-right corner */
-            top: 4rem;
-            left: 3rem;                 /*puts all social icons on the left side*/
+            top: 2rem;
+            left: 2rem;                 /*puts all social icons on the left side*/
             display: flex;
             gap: 1rem;                  /* space between icons */
         }
@@ -120,11 +130,33 @@ header {
             animation: slowSpin 10s linear infinite; /* slow rotation */
             cursor: pointer;
         }
-
-        /* Add hover effect */
-        .social-icon:hover {
-        transform: scale(1.1);  /* grows slightly on hover */
+        
+        /* Right-side NAV LINKS – always visible */
+        .nav-links {
+        position: absolute;       /* keeps it on screen while scrolling */
+        top: 1.5rem;             /* distance from top */
+        right: 2rem;           /* distance from right */
+        display: flex;
+        flex-direction: row;   /* horizontal layout */
+        gap: 2rem;             /* space between links */
+        font-size: 1.1rem;
+        list-style: none;      /* remove bullets */
+        z-index: 10;         /* make sure it stays above other content */
         }
+
+/* Links style */
+.nav-links a {
+  color: #1c4b20;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #ffffff;
+}
+
+
+        
 
         /* Particles */
         .particle {
@@ -188,31 +220,6 @@ section {
   max-width: 1400px;
   margin: auto;
 }
-
-/* Right-side NAV LINKS – always visible */
-.nav-links {
-  position: absolute;       /* keeps it on screen while scrolling */
-  top: 4rem;             /* distance from top */
-  right: 3rem;           /* distance from right */
-  display: flex;
-  flex-direction: row;   /* horizontal layout */
-  gap: 2rem;             /* space between links */
-  font-size: 1.1rem;
-  list-style: none;      /* remove bullets */
-  z-index: 1000;         /* make sure it stays above other content */
-}
-
-/* Links style */
-.nav-links a {
-  color: #1c4b20;
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-.nav-links a:hover {
-  color: #ffffff;
-}
-
 
 
 

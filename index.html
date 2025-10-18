@@ -8,6 +8,8 @@
   <!-- header font -->
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+  <!-- imports the typewriter Typed.js library from the internet -->
+  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Anna Cao | Personal Website</title>
@@ -29,26 +31,17 @@
 
     <div class = "header-content">
 
-    <!-- Right-side headings menu, which will stay inside the header (ul=unordered list) id= js target-->
-  <ul class="nav-links" id="navbar"> 
-    <li> <a href="#about">About</a> </li>
-    <li> <a href="#experience">Experience</a> </li>
-    <li> <a href="#skills">Skills</a> </li>
-    <li> <a href="#hobbies">Hobbies</a> </li>
-    <li> <a href="#contact">Contact</a> </li>
-  </ul>
-
         <img src="images/annasportrait.png" alt="Anna Cao" class="profile-pic">            <!-- The picture of yourself -->
-        <h1>Hi, I’m Anna!</h1>     <!-- The title on your webpage / introduction -->
-        <p class="wave">👋</p>
+        
+        <div class = "header-text">
+          <h1>Hi, I’m Anna!</h1>     <!-- The title on your webpage / introduction -->
+          <span class="wave">👋</span>
+        </div>
 
         <!-- typewriter here -->
         <div class="typewriter">
           <h2><span class="auto-type"></span></h2>
         </div>
-
-        <!-- imports the Typed.js library from the internet -->
-        <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
 
         <!-- cycles through the words “Programming,” “3d Printing,” and “Explorer”, -->
         <script>
@@ -81,6 +74,15 @@
             </a>
 
         </div>
+
+            <!-- Right-side headings menu, which will stay inside the header (ul=unordered list) id= js target-->
+            <ul class="nav-links" id="navbar"> 
+            <li> <a href="#about">About</a> </li>
+            <li> <a href="#experience">Experience</a> </li>
+            <li> <a href="#skills">Skills</a> </li>
+            <li> <a href="#hobbies">Hobbies</a> </li>
+            <li> <a href="#contact">Contact</a> </li>
+            </ul>
 
     
 </header> 
