@@ -225,25 +225,89 @@ section {
   margin: auto;
 }
 
-.card {
-  background: #4d6352;
-  color: white;
-  border-radius: 1rem;
-  padding: 2rem;
-  margin: 2rem auto;
-  max-width: 800px;
-  /*box-shadow: 0 4px 15px rgba(0,0,0,0.3);;*/
-}
-.card h3 {
-  font-size: 22px;
-  font-weight: 500;
-  letter-spacing: 2px;
-}
-
-.card p {
+/*applies font properties to each paragraph in the holographic elements */
+.holographic-about, .holographic-about p,
+.holographic-experience, .holographic-experience p,
+.holographic-skills, .holographic-skills p,
+.holographic-hobbies, .holographic-hobbies p,
+.holographic-contact, .holographic-contact p{
   font-family: "Montserrat", sans-serif; /* Montserrat first, fallback is sans-serif */
   font-weight: 300; /* Extra light */
   font-size: 14.6px;
   letter-spacing: 1px;
   line-height: 1.5;
+  text-shadow: 1px 1px 2px rgba(0,0,0,3);
+  
+}
+
+.holographic-about{
+    background:#7e9782;
+    padding: 2rem;
+    border-radius: 1rem;
+    margin:4rem auto; /*auto centers the container*/
+    width: 50%;
+    
+
+}
+
+.holographic-about:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 20px rgba(192, 202, 132, 0.842)
+}
+
+.holographic-experience{
+    background:#7e9782;
+    padding: 2rem;
+    border-radius: 1rem;
+    margin:4rem auto; /*auto centers the container*/
+    width: 50%;
+
+}
+
+.holographic-experience:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 20px rgba(192, 202, 132, 0.842)
+}
+
+.holographic-skills{
+    background:#7e9782;
+    padding: 2rem;
+    border-radius: 1rem;
+    margin:4rem auto; /*auto centers the container*/
+    width: 50%;
+
+}
+
+.holographic-skills:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 20px rgba(192, 202, 132, 0.842)
+}
+
+.holographic-hobbies{
+    background:#7e9782;
+    padding: 2rem;
+    border-radius: 1rem;
+    margin:4rem auto; /*auto centers the container*/
+    width: 50%;
+
+}
+
+.holographic-hobbies:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 20px rgba(192, 202, 132, 0.842)
+}
+
+.holographic-contact{
+    background:#7e9782;
+    padding: 2rem;
+    border-radius: 1rem;
+    margin:4rem auto; /*auto centers the container*/
+    width: 50%;
+
+}
+
+.holographic-contact:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 20px rgba(192, 202, 132, 0.842)
+    
 }
