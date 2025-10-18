@@ -216,4 +216,34 @@ section {
 
 
 
+.card {
+
+    background: #4d6352;
+    color:white;
+    border-radius:1rem;
+    padding:2rem;
+    margin:2rem auto;
+    max-width:800px;
+    /*box-shadow: 0 4px 15px rgba(0,0,0,0.3);;*/
+    
+    
+}
+.card h3 {
+    font-size: 22px ;
+    font-weight:500;
+    letter-spacing: 2px;
+}
+
+.card p {
+  font-family: 'Montserrat', sans-serif;    /* Montserrat first, fallback is sans-serif */
+  font-weight: 300;                        /* Extra light */
+  font-size: 14.6px;
+  letter-spacing: 1px;
+  line-height:1.5;
+
+}
+
+
+
+
 
