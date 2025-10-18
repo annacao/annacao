@@ -192,8 +192,8 @@ section {
 /* Right-side NAV LINKS – always visible */
 .nav-links {
   position: absolute;       /* keeps it on screen while scrolling */
-  top: 3.4rem;             /* distance from top */
-  right: 3.4rem;           /* distance from right */
+  top: 4rem;             /* distance from top */
+  right: 3rem;           /* distance from right */
   display: flex;
   flex-direction: row;   /* horizontal layout */
   gap: 2rem;             /* space between links */
