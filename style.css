@@ -274,7 +274,7 @@ section {
 
 /* Back side */
 .flip-card-back {
-  background-color: rgb(100, 130, 104);
+  background-color: #648268;
   color: white;
   transform: rotateY(180deg);
   display: flex;
