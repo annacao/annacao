@@ -9,17 +9,11 @@ html, body {
   color: #ffffff;
 }
 
-/* MAIN */
-main {
-  background: linear-gradient(to top, transparent 0%, rgba(17,17,17,0.2) 80%, #111111 100%);
-  color: azure;
-  padding-top: 0;
-}
 
 /* ===== HEADER BOX ===== */
 
 header {
-  background: linear-gradient(to bottom, #9db3a2 0%, transparent 90%); /*top gradient*/
+  background: linear-gradient(to bottom, #9db3a2 0%, transparent 100%); /*top gradient*/
   height: 71%;
   display: flex;
   justify-content: center;
@@ -78,12 +72,6 @@ h2 {
 .typed-cursor {
   color: #4d6352;
   animation: blink 0.8s infinite; /* slower or faster blink */
-}
-
-.header-text {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
 }
 
 /* Wave emoji style */
