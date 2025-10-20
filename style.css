@@ -151,13 +151,14 @@ h2 {
 
 /* Particles */
 .particle {
-  position: absolute;
+  position: fixed;
   width: 5px; /* a bit bigger so they are visible */
   height: 5px;
   background: rgba(255, 255, 255, 0.5);
   border-radius: 50%;
   animation: drift linear infinite;
   z-index: 0;
+  pointer-events: none; /*makes the particles "invisible to clicks"*/
   
 }
 
