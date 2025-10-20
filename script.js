@@ -16,7 +16,7 @@ window.addEventListener("load", () => {
     particle.style.left = left + "px";
 
     // Random movement offsets
-    const x = (Math.random() - 0.5) * 300;
+    const x = (Math.random() - 0.5) * (container.clientWidth - 20); // 20px buffer;
     const y = container.clientHeight - top - footerHeight; //updated
     particle.style.setProperty("--x", x + "px");
     particle.style.setProperty("--y", y + "px");

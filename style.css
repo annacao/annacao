@@ -7,6 +7,7 @@ html, body {
   font-family: "IBM Plex Mono", monospace;
   background: #111111;
   color: #ffffff;
+  overflow-x: hidden; /* hides horizontal scroll */
   /* overflow: hidden; /*takes full window, no cursor*/ 
 }
 
@@ -15,7 +16,7 @@ html, body {
 
 header {
   background: linear-gradient(to bottom, #9db3a2 0%, transparent 100%); /*top gradient*/
-  height: 71%;
+  height: 60%;
   display: flex;
   justify-content: center;
   position: relative;
@@ -42,7 +43,7 @@ h2 {
 
 /* Profile image */
 .profile-pic {
-  width: 50%;
+  width: 35%;
   height: auto;
   border-radius: 0%;                                  /* circular image */
   filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
@@ -59,7 +60,6 @@ h2 {
   gap: 1rem; /* space between text and emoji */
   height: 100%; /* make it fill the header's height */
   position: relative; /* keep wave and typewriter positioned relative */
-  left: 0;
   z-index: 1;
 }
 
@@ -120,9 +120,10 @@ h2 {
 .socials {
   position: absolute; /* keep them in the top-right corner */
   top: 2rem;
-  left: 2rem; /*puts all social icons on the left side*/
+  right: 2rem; /*puts all social icons on the left side*/
   display: flex;
   gap: 1rem; /* space between icons */
+  z-index:1;
 }
 
 /* Each icon */
@@ -145,17 +146,6 @@ h2 {
   font-size: 1.1rem;
   list-style: none; /* remove bullets */
   z-index: 10; /* make sure it stays above other content */
-}
-
-/* Links style */
-.nav-links a {
-  color: #1c4b20;
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-.nav-links a:hover {
-  color: #ffffff;
 }
 
 /* Particles */
@@ -219,7 +209,7 @@ h2 {
 
 /* ===== Sections ===== */
 section {
-  padding: 1rem;
+  padding: 2rem;
   max-width: 1400px;
   margin: auto;
   
@@ -242,7 +232,7 @@ section {
   justify-content: center;  /* center the cards */
   padding: 2rem;
   flex-wrap: wrap;          /* wrap cards on smaller screens */
-  margin-top: -6rem; /* move cards upward */
+  margin-top: 0rem; /* move cards upward */
 
 }
 
@@ -313,6 +303,7 @@ footer {
 
 /* MOBILE STYLES */
 @media (max-width: 600px) {
+
 
   /* " Hi, I'm Anna " Space */
  .header-text {
