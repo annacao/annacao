@@ -8,6 +8,7 @@ html, body {
   background: #111111;
   color: #ffffff;
   overflow-x: hidden; /* hides horizontal scroll */
+  overflow-y: auto;
   /* overflow: hidden; /*takes full window, no cursor*/ 
 }
 
@@ -299,6 +300,8 @@ footer {
   background: #222;
   color: #fff;
   font-size: 12px;
+  z-index: 1;
+
 }
 
 /* MOBILE STYLES */
