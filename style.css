@@ -333,7 +333,7 @@ footer {
     display: flex;
     gap: 2rem; /* space between cards */
     padding: 2rem; /* reduce padding for small screens */
-    margin-top: -6rem; /* adjust vertical spacing if needed */
+    margin-top: -1rem; /* adjust vertical spacing if needed */
   }
 
   /* Front side image scaling */
@@ -353,4 +353,5 @@ footer {
   .flip-card-back {
     font-size: 13px;
   }
+
 }
