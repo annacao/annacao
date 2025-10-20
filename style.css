@@ -316,7 +316,7 @@ footer {
     left: 50%;          /* move to horizontal center */
     transform: translateX(-50%); /* actually center it */
     justify-content: center;     /* center icons inside the container */
-    gap: 4rem;                  /* spacing between icons */
+    gap: 1rem;                  /* spacing between icons */
   }
 
 
