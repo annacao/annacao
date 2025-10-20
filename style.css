@@ -308,6 +308,18 @@ footer {
 
 /* MOBILE STYLES */
 @media (max-width: 600px) {
+
+  /*moves social icons to the center*/
+  .socials {
+    position: absolute; /* still positioned relative to header */
+    top: 1rem;          /* distance from top */
+    left: 50%;          /* move to horizontal center */
+    transform: translateX(-50%); /* actually center it */
+    justify-content: center;     /* center icons inside the container */
+    gap: 4rem;                  /* spacing between icons */
+  }
+
+
   /* " Hi, I'm Anna " Space */
   .header-text {
     display: wrap;
@@ -333,7 +345,7 @@ footer {
     display: flex;
     gap: 2rem; /* space between cards */
     padding: 2rem; /* reduce padding for small screens */
-    margin-top: -1rem; /* adjust vertical spacing if needed */
+    margin-top: -1rem; /* adjust vertical spacing betwween card and blinking cursor words if needed */
   }
 
   /* Front side image scaling */
@@ -353,5 +365,4 @@ footer {
   .flip-card-back {
     font-size: 13px;
   }
-
 }
