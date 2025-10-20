@@ -44,7 +44,7 @@ h2 {
 
 /* Profile image */
 .profile-pic {
-  width: 35%;
+  width: 30%;
   height: auto;
   border-radius: 0%;                                  /* circular image */
   filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
@@ -62,6 +62,7 @@ h2 {
   height: 100%; /* make it fill the header's height */
   position: relative; /* keep wave and typewriter positioned relative */
   z-index: 1;
+  margin-top: 2.5rem; /* move everything down a bit */
 }
 
 /*hi im anna (wave)*/
