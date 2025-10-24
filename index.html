@@ -89,12 +89,42 @@
     </header>
 
 <section class="stacked-cards">
-  <div class="card">ABOUT</div>
-  <div class="card">RESUME</div>
-  <div class="card">PROJECTS</div>
-  <div class="card">3D PRINTING</div>
-  <div class="card">THE HOMESTEAD</div>
-  <div class="card">CONTACT</div>
+  <div class="card" data-target="#about">ABOUT</div>
+  <div class="card" data-target="#resume">RESUME</div>
+  <div class="card" data-target="#projects">PROJECTS</div>
+  <div class="card" data-target="#printing">3D PRINTING</div>
+  <div class="card" data-target="#homestead">THE HOMESTEAD</div>
+  <div class="card" data-target="#contact">CONTACT</div>
+</section>
+
+<section id="about">
+  <h2>About Me</h2>
+  <p>Write something about yourself here...</p>
+</section>
+
+<section id="resume">
+  <h2>Resume</h2>
+  <p>Details about your experience...</p>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <p>Your project showcase...</p>
+</section>
+
+<section id="printing">
+  <h2>3D Printing</h2>
+  <p>Stuff you’ve printed...</p>
+</section>
+
+<section id="homestead">
+  <h2>The Homestead</h2>
+  <p>Personal or side projects...</p>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p>Ways to reach you...</p>
 </section>
 
 
@@ -126,6 +156,28 @@
         <!-- Add more certifications as needed -->
       </div>
     </section>
+
+    <!-- === Scroll to Section on Card Click === -->
+<script>
+  document.querySelectorAll('.stacked-cards .card').forEach(card => {
+    card.addEventListener('click', () => {
+      const targetId = card.getAttribute('data-target');
+      const target = document.querySelector(targetId);
+
+      if (target) {
+        // Enable scrolling if it was disabled
+        document.body.style.overflow = 'auto';
+
+        // Smooth scroll to the section
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    });
+  });
+</script>
+
 
       <!-- moving particles animation -->
     <script src="script.js"></script>
