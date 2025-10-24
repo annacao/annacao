@@ -102,10 +102,117 @@
       <p class = "info-box"> Details about your experience...</p>  
 </section>
 
+
+
+
+
 <section id="projects" class="content-section">
-  <h2>UX Design Case Study</h2>
-  <p class = "info-box">Problem Space, What, When, Where, Why, How </p>
-  <p class = "info-box"></p>
+  <h2>TripSync - UX Design Case Study</h2>
+
+  <div class = "info-box">
+    <div class = "UXcase-buttons">
+      <button class = "toggle-btn" data-target = "problem-space"> Problem Space </button>
+      <button class = "toggle-btn" data-target = "what"> What </button>
+      <button class = "toggle-btn" data-target = "who"> Users </button>
+      <button class = "toggle-btn" data-target = "ideation"> Ideation </button>
+      <button class = "toggle-btn" data-target = "research"> Research </button>
+      <button class = "toggle-btn" data-target = "prototype"> Prototype </button>
+    </div>
+
+    <!-- Hidden detail boxes -->
+    <div id="problem-space" class="details">
+      <p>Coordinating group travel is frustrating; it's often chaotic. Keeping track of expenses, 
+        itineraries, and communication across multiple platforms makes planning 
+        inefficient and overwhelming</p>
+    </div>
+
+    <div id="what" class="details">
+      <p>TripSync makes group travel easy. It’s an all-in-one app that combines itinerary planning, 
+        expense tracking, group chats, and memory sharing so you don’t have to juggle a bunch of 
+        different tools. With an AI-powered travel assistant built right into the chat, TripSync 
+        keeps everything organized, helps with planning, and makes sure everyone stays on the same 
+        page. It’s designed to take the stress out of managing budgets and coordinating plans, so 
+        you can focus on enjoying the trip. Whether you’re splitting expenses or sharing 
+        unforgettable moments.</p>
+    </div>
+
+    <div id="who" class="details">
+      <p>Frequent travelers need a way to stay informed, coordinate plans, and track
+         group expenses, regardless of whether they’re hosting or joining a trip</p>
+    </div>
+
+    <div id="ideation" class="details">
+      <p>How might we create a centralized tool that simplifies group trip planning 
+        by integrating budgeting, itinerary management, and real-time communication?</p>
+    </div>
+
+    <div id="research" class="details">
+      <p>Aspects that are most important to a traveller: Sharing memories, collaborating ideas</p>
+      <p>Biggest challenges: Decision making and accommodating different needs, planning activities around different budgets</p>
+      <p>Their role: 80% of participants handle itinerary, accommodation, and arrange activities in group travel</p>
+      <p>Budgeting: 60% of participants said budgeting is somewhat important to them</p>
+      <p>Budgeting methods: Divide and split after every activity, Communicate with others</p>
+      <p>Preferred social features: Group messaging, task assignments</p>
+      <p>Tools: Google Docs, Sheets/excel, Communication Platforms (Texting, Whatsapp, Facebook) </p>
+
+    </div>
+
+    <div id="prototype" class = "details">
+      <p> Showcase the prototype here</p>
+    </div>
+
+    <div class = "UXcase-images" >
+      <img src = "images/UXinfoarch.png">
+      <img src = "images/UXwireframe.png">
+    </div>
+
+  </div>
+
+<!-- Auto-open Problem Space when Projects loads -->
+<script>
+  document.querySelector('[data-target="#projects"]').addEventListener('click', () => {
+    setTimeout(() => {
+      const problemSpace = document.getElementById('problem-space');
+      const problemButton = document.querySelector('[data-target="problem-space"]');
+      document.querySelectorAll('.details').forEach(d => d.style.display = 'none');
+      if (problemSpace) problemSpace.style.display = 'block';
+      if (problemButton) problemButton.classList.add('active-btn');
+    }, 400);
+  });
+</script>
+
+
+
+
+  <!-- Opens the clicked section under ux case studies -->
+
+  <script>
+  const buttons = document.querySelectorAll('.toggle-btn');
+  const details = document.querySelectorAll('.details');
+
+  buttons.forEach(button => {
+    button.addEventListener('click', () => {
+      const targetId = button.getAttribute('data-target');
+      const target = document.getElementById(targetId);
+
+      // remove highlight from all buttons
+      buttons.forEach(btn => btn.classList.remove('active-btn'));
+
+      // toggle section visibility and highlight
+      if (target.style.display === 'block') {
+        target.style.display = 'none';
+      } else {
+        details.forEach(d => d.style.display = 'none');
+        target.style.display = 'block';
+        button.classList.add('active-btn');
+      }
+    });
+  });
+</script>
+
+
+
+
 
   <h3>Personal</h3>
   <p class = "info-box">Wedding Invitations, Themed Event Itinerary Project </p>

@@ -323,7 +323,81 @@ footer {
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
+/* ===== UX CASE STUDY SECTION ============================================================ */
+.UXcase-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
 
+.toggle-btn {
+  background-color: transparent;
+  color: #38220F;
+  border: 2px solid #806d5c;
+  font-family: "Montserrat";
+  font-weight:550;
+  font-size: 1rem;
+  padding: 0.5rem 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+}
+
+.toggle-btn:hover {
+  background-color: #38220F;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.toggle-btn:active {
+  transform: translateY(0);
+}
+
+/* highlight active button */
+.active-btn {
+  background-color: #38220F;
+  color: #ffffff;
+}
+
+.details {
+  display: none;
+  margin-top: 1rem;
+  border: 2px solid #806d5c;
+  border-radius: 5px;
+  padding: 1rem 1.5rem;
+  text-align: left;
+  color: #38220F;
+  background-color: rgba(255, 255, 255, 0.2);
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.6;
+  animation: fadeIn 0.3s ease;
+}
+/*the wall holding your picture frames.*/
+.UXcase-images {
+  display: flex;              /* places images in a row */
+  justify-content: center;    /* centers them horizontally */
+  align-items: center;        /* aligns them vertically */
+  gap: 1rem;                  /* adds space between each image */
+  flex-wrap: wrap;            /* lets them wrap on smaller screens */
+  margin-top: 1.5rem;
+}
+/*each individual picture inside the frame.*/
+.UXcase-images img {
+  width: 40%;                 /* adjust this number to control size */
+  max-width: 400px;           /* prevents them from getting too big */
+  height: auto;               /* keeps the aspect ratio */
+  border-radius: 8px;         /* optional — rounds corners */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* optional subtle shadow */
+}
+
+/* smooth fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 
 
 
