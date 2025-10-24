@@ -97,32 +97,43 @@
   <div class="card" data-target="#contact">CONTACT</div>
 </section>
 
-<section id="about">
+<section id="about" class="content-section">
+
   <h2>About Me</h2>
-  <p>Write something about yourself here...</p>
+      <p class = "info-box" >Write something about yourself here...</p>
+
+  <h3> Skills </h3>
+      <p class = "info-box" > HTML, CSS, JS, FIGMA, PHOTOSHOP ETC</p>
+
+  <h4>Achievements</h4>
+      <p class="info-box">Diploma, Applied Science</p>
+      <p class="info-box">Certification, BrainStation UX Design</p>
+
 </section>
 
-<section id="resume">
+
+
+<section id="resume" class="content-section">
   <h2>Resume</h2>
   <p>Details about your experience...</p>
 </section>
 
-<section id="projects">
+<section id="projects" class="content-section">
   <h2>Projects</h2>
   <p>Your project showcase...</p>
 </section>
 
-<section id="printing">
+<section id="printing" class="content-section">
   <h2>3D Printing</h2>
   <p>Stuff you’ve printed...</p>
 </section>
 
-<section id="homestead">
+<section id="homestead" class="content-section">
   <h2>The Homestead</h2>
   <p>Personal or side projects...</p>
 </section>
 
-<section id="contact">
+<section id="contact" class="content-section">
   <h2>Contact</h2>
   <p>Ways to reach you...</p>
 </section>
@@ -130,49 +141,27 @@
 
 
 
-
-          <!-- Samples of 2D icon Work? -->
-    <section class="2D icon work">
-      <h2>2D Icon Library</h2>
-      <div class="2D icon work">
-        <div class="2D-item">
-          <h3>2D item here</h3>
-          <p>decription of 2D icon</p>
-        </div>
-    </section>
-
-     <!-- Certifications Section -->
-    <section class="certifications">
-      <h2>Credentials</h2>
-      <div class="certification-list">
-        <div class="certification-item">
-          <h3>Certificate, UX Designer</h3>
-          <p>BrainStation, 2025</p>
-        </div>
-        <div class="certification-item">
-          <h3>Diploma, Applied Science (Engineering)</h3>
-          <p>Langara College, 2025</p>
-        </div>
-        <!-- Add more certifications as needed -->
-      </div>
-    </section>
-
-    <!-- === Scroll to Section on Card Click === -->
+<!-- === Show Only Clicked Section === -->
 <script>
   document.querySelectorAll('.stacked-cards .card').forEach(card => {
     card.addEventListener('click', () => {
       const targetId = card.getAttribute('data-target');
       const target = document.querySelector(targetId);
 
-      if (target) {
-        // Enable scrolling if it was disabled
-        document.body.style.overflow = 'auto';
+      // Unlock scrolling
+      document.body.style.overflow = 'auto';
 
-        // Smooth scroll to the section
-        target.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        });
+      // Hide all sections first
+      document.querySelectorAll('.content-section').forEach(section => {
+        section.classList.remove('active');
+        section.style.display = 'none';
+      });
+
+      // Show only the clicked one
+      if (target) {
+        target.style.display = 'block';
+        setTimeout(() => target.classList.add('active'), 50);
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
     });
   });

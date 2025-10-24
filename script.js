@@ -26,4 +26,6 @@ window.addEventListener("load", () => {
 
     container.appendChild(particle);
   }
+
+  
 });

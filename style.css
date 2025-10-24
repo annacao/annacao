@@ -230,6 +230,23 @@ footer {
   z-index: 1;
 }
 
+/* Hide all content sections by default delete this if doesnt work*/ 
+.content-section {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+/* When a section is active (clicked) delete this if doesnt work*/
+.content-section.active {
+  display: block;
+  opacity: 1;
+}
+
+
+
+
+
 /* ===== STACKED CARDS SECTION ===== */
 .stacked-cards {
   display: flex;
@@ -273,6 +290,38 @@ footer {
   box-shadow: 0 50px 70px rgba(0, 0, 0, 0.9);
   z-index: 20;
 }
+
+/*ABOUT TITLE*/
+#about h2,
+#about h3,
+#about h4 { 
+  background-color: #fcfcfc00;   /* box color is translucent */
+  color: #8B5A3C;              /* text color */
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 2rem;
+  padding: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 0; /*IMPORTANT LINE DO NOT ERASE*/
+  border-radius: 0px;         /* rounded corners */
+  border:2px solid white; /*solid white border*/
+}
+
+/*paragraph boxes: flush together*/
+#about .info-box {
+  background-color: transparent;
+  color: #ffffff;
+  font-family: "IBM Plex Mono", monospace;
+  padding: 1rem;
+  margin: 0;              /* removes gaps between paragraphs */
+  border: 2px solid white;
+  border-top: none;       /* prevents double borders */
+  line-height: 1;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+
+
+
 
 
 /* MOBILE STYLES */
