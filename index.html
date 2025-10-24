@@ -142,9 +142,17 @@
     </div>
 
     <div id="ideation" class="details">
-      <p>How might we create a centralized tool that simplifies group trip planning 
-        by integrating budgeting, itinerary management, and real-time communication?</p>
-    </div>
+  <p>How might we create a centralized tool that simplifies group trip planning 
+    by integrating budgeting, itinerary management, and real-time communication?</p>
+
+  <div class="image-row">
+    <img src="images/UXinfoarch.png">
+    <img src="images/UXuserflow.png">
+    <img src="images/UXwireframe.png">
+    <img src="images/UXstyleguide.png">
+  </div>
+</div>
+
 
     <div id="research" class="details">
       <p>Aspects that are most important to a traveller: Sharing memories, collaborating ideas</p>
@@ -162,53 +170,70 @@
     </div>
 
     <div class = "UXcase-images" >
-      <img src = "images/UXinfoarch.png">
-      <img src = "images/UXwireframe.png">
+      <img src = "images/UXcase1.png">
+      <img src = "images/UXcase2.png">
+      <img src = "images/UXcase3.png">
+      <img src = "images/UXcase4.png">
+      <img src = "images/UXcase5.png">
+
     </div>
 
   </div>
 
-<!-- Auto-open Problem Space when Projects loads -->
 <script>
-  document.querySelector('[data-target="#projects"]').addEventListener('click', () => {
-    setTimeout(() => {
-      const problemSpace = document.getElementById('problem-space');
-      const problemButton = document.querySelector('[data-target="problem-space"]');
-      document.querySelectorAll('.details').forEach(d => d.style.display = 'none');
-      if (problemSpace) problemSpace.style.display = 'block';
-      if (problemButton) problemButton.classList.add('active-btn');
-    }, 400);
-  });
-</script>
+document.addEventListener("DOMContentLoaded", () => {
+  const cards = document.querySelectorAll(".stacked-cards .card");
+  const sections = document.querySelectorAll(".content-section");
+  const buttons = document.querySelectorAll(".toggle-btn");
+  const details = document.querySelectorAll(".details");
 
+  // Function to open specific detail (e.g. "Problem Space")
+  function showDetail(targetId) {
+    details.forEach(d => d.classList.remove("active"));
+    buttons.forEach(b => b.classList.remove("active-btn"));
+    const target = document.getElementById(targetId);
+    const button = document.querySelector(`.toggle-btn[data-target="${targetId}"]`);
+    if (target) target.classList.add("active");
+    if (button) button.classList.add("active-btn");
+  }
 
+  // Handle clicking on any main card (About, Resume, Projects, etc.)
+  cards.forEach(card => {
+    card.addEventListener("click", () => {
+      const targetId = card.getAttribute("data-target");
+      const target = document.querySelector(targetId);
 
+      document.body.style.overflow = "auto";
 
-  <!-- Opens the clicked section under ux case studies -->
+      // Hide all sections first
+      sections.forEach(section => {
+        section.classList.remove("active");
+        section.style.display = "none";
+      });
 
-  <script>
-  const buttons = document.querySelectorAll('.toggle-btn');
-  const details = document.querySelectorAll('.details');
+      // Show the clicked section
+      if (target) {
+        target.style.display = "block";
+        setTimeout(() => target.classList.add("active"), 20);
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
 
-  buttons.forEach(button => {
-    button.addEventListener('click', () => {
-      const targetId = button.getAttribute('data-target');
-      const target = document.getElementById(targetId);
-
-      // remove highlight from all buttons
-      buttons.forEach(btn => btn.classList.remove('active-btn'));
-
-      // toggle section visibility and highlight
-      if (target.style.display === 'block') {
-        target.style.display = 'none';
-      } else {
-        details.forEach(d => d.style.display = 'none');
-        target.style.display = 'block';
-        button.classList.add('active-btn');
+        // Auto-open "Problem Space" only when Projects is opened
+        if (targetId === "#projects") {
+          setTimeout(() => showDetail("problem-space"), 250);
+        }
       }
     });
   });
+
+  // Handle UX case study buttons (Problem Space, What, Users, etc.)
+  buttons.forEach(button => {
+    button.addEventListener("click", () => {
+      showDetail(button.getAttribute("data-target"));
+    });
+  });
+});
 </script>
+
 
 
 
