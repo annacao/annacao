@@ -5,7 +5,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: "IBM Plex Mono", monospace;
-  background: #909fa0;
+  background: #dfdbd4;
   color: #ffffff;
   overflow-x: hidden; /* hides horizontal scroll */
   overflow: hidden; /*takes full window, no cursor*/
@@ -38,7 +38,7 @@ h1 {
 
 /* SUBheader text */
 h2 {
-  color: #8B5A3C;
+  color: #8B5A3C; /*38220F for coffee colour*/
   text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.5);
   margin: 0; /* remove extra spacing */
   font-size: 35px;
@@ -120,14 +120,15 @@ h2 {
   }
 }
 
-/* Social icons container */
+/* Social icons container - bottom centered */
 .socials {
-  position: absolute; /* keep them in the top-right corner */
-  top: 2rem;
-  right: 2rem; /*puts all social icons on the left side*/
+  position: relative; 
+  align-items: center;
+  justify-content: center;
   display: flex;
   gap: 1rem; /* space between icons */
-  z-index: 1;
+  margin-bottom: 2rem;
+  z-index: 5;
 }
 
 /* Each icon */
@@ -139,18 +140,6 @@ h2 {
   cursor: pointer;
 }
 
-/* Right-side NAV LINKS – always visible */
-.nav-links {
-  position: absolute; /* keeps it on screen while scrolling */
-  top: 1.5rem; /* distance from top */
-  right: 2rem; /* distance from right */
-  display: flex;
-  flex-direction: row; /* horizontal layout */
-  gap: 2rem; /* space between links */
-  font-size: 1.1rem;
-  list-style: none; /* remove bullets */
-  z-index: 10; /* make sure it stays above other content */
-}
 
 /* Particles */
 .particle {
@@ -180,22 +169,22 @@ h2 {
 @keyframes neonGradient {
   0% {
     filter: drop-shadow(0 0 10px rgba(247, 247, 247, 0.7))
-      drop-shadow(0 0 10px rgba(240, 238, 167, 0.87));
+      drop-shadow(0 0 10px rgba(212, 153, 64, 0.87));
   }
   25% {
     filter: drop-shadow(0 0 10px rgba(237, 245, 245, 0.87))
-      drop-shadow(0 0 10px rgba(224, 238, 173, 0.7));
+      drop-shadow(0 0 10px rgba(240, 211, 167, 0.87));
   }
   50% {
-    filter: drop-shadow(0 0 10px rgba(240, 238, 167, 0.87))
+    filter: drop-shadow(0 0 10px rgba(212, 153, 64, 0.87))
       drop-shadow(0 0 10px rgba(247, 247, 247, 0.7));
   }
   75% {
     filter: drop-shadow(0 0 10px rgba(237, 245, 245, 0.87))
-      drop-shadow(0 0 10px rgba(240, 238, 167, 0.87));
+      drop-shadow(0 0 10px rgba(240, 211, 167, 0.87));
   }
   100% {
-    filter: drop-shadow(0 0 10px rgba(240, 238, 167, 0.87))
+    filter: drop-shadow(0 0 10px rgba(212, 153, 64, 0.87))
       drop-shadow(0 0 10px rgba(247, 247, 247, 0.7));
   }
 }
@@ -291,13 +280,18 @@ footer {
   z-index: 20;
 }
 
-/*ABOUT TITLE*/
+/*CARD TITLE DETAILS*/
 #about h2,
 #about h3,
-#about h4 { 
+#about h4,
+#resume h2, 
+#projects h2,
+#printing h2, 
+#homestead h2,
+#contact h2 { 
   background-color: #fcfcfc00;   /* box color is translucent */
   color: #8B5A3C;              /* text color */
-  font-family: "IBM Plex Mono", monospace;
+  font-family: "Montserrat";
   font-size: 2rem;
   padding: 2rem;
   margin-top: 2rem;
@@ -306,16 +300,22 @@ footer {
   border:2px solid white; /*solid white border*/
 }
 
-/*paragraph boxes: flush together*/
-#about .info-box {
+/*paragraph boxes */
+#about .info-box,
+#resume .info-box,
+#projects .info-box,
+#printing .info-box,
+#homestead .info-box,
+#contact .info-box {
   background-color: transparent;
-  color: #ffffff;
-  font-family: "IBM Plex Mono", monospace;
-  padding: 1rem;
+  color: #38220F; /*coffee colour*/
+  font-family: "Montserrat";
+  font-weight:550; /*thickens the letters for readability*/
+  line-height: 2; /*vertical line spacing*/
+  padding: 2rem;
   margin: 0;              /* removes gaps between paragraphs */
   border: 2px solid white;
   border-top: none;       /* prevents double borders */
-  line-height: 1;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
