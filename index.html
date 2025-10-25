@@ -117,23 +117,21 @@
       <img src = "images/UXcase3.png">
       <img src = "images/UXcase4.png">
       <img src = "images/UXcase5.png">
-
     </div>
 
     <div class = "UXcase-buttons">
-      <button class = "toggle-btn" data-target = "problem-space"> Problem Space </button>
+      <button class = "toggle-btn" data-target = "summary"> Summary </button>
       <button class = "toggle-btn" data-target = "what"> What </button>
       <button class = "toggle-btn" data-target = "who"> Users </button>
       <button class = "toggle-btn" data-target = "ideation"> Ideation </button>
       <button class = "toggle-btn" data-target = "research"> Research </button>
-      <button class = "toggle-btn" data-target = "prototype"> Prototype </button>
     </div>
 
     <!-- Hidden detail boxes -->
-    <div id="problem-space" class="details">
-      <p>Group travel is exciting and full of possibilities, but coordinating it can quickly become 
-        chaotic. Juggling expenses, itineraries, and communication across multiple platforms often 
-        makes planning feel disorganized and exhausting.</p>
+    <div id="summary" class="details">
+      <p>TripSync makes group travel easy. An all-in-one app that combines itinerary planning, 
+        expense tracking, group chats, and memory sharing so you don’t have to juggle a bunch of 
+        different tools.</p>
     </div>
 
     <div id="what" class="details">
@@ -173,10 +171,6 @@
       <p>Preferred social features: Group messaging, task assignments</p>
       <p>Tools: Google Docs, Sheets/excel, Communication Platforms (Texting, Whatsapp, Facebook) </p>
 
-    </div>
-
-    <div id="prototype" class = "details">
-      <p> Showcase the prototype here</p>
     </div>
 
   </div>
@@ -220,7 +214,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Auto-open "Problem Space" only when Projects is opened
         if (targetId === "#projects") {
-          setTimeout(() => showDetail("problem-space"), 250);
+          setTimeout(() => showDetail("summary"), 250);
         }
       }
     });
