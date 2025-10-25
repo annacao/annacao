@@ -240,7 +240,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #222;
+  background: #38220F;
   color: #fff;
   font-size: 12px;
   z-index: 1;
@@ -357,7 +357,7 @@ footer {
   flex-wrap: wrap;
   justify-content: center;
   gap: 1rem;
-  margin-top: 1rem;
+  margin-top: 3rem;
 }
 
 .toggle-btn {
@@ -404,12 +404,12 @@ footer {
   animation: fadeIn 0.3s ease;
 }
 
-#ideation {
+.UXideaimg {
   text-align: center; /* centers everything inside */
   margin-top: 1.5rem;
 }
 
-#ideation img {
+.UXideaimg img {
   height: 200px;              /* sets same height for all images */
   width: auto;                /* keeps proportions natural */
   object-fit: cover;          /* crops edges to fit nicely */
@@ -420,22 +420,8 @@ footer {
   transition: transform 0.3s ease;
 }
 
-/* applies flex ONLY to images inside ideation */
-#ideation img {
-  display: inline-block; /* normal image display */
-}
-
-#ideation .image-row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  margin-top: 1rem;
-}
-
-/* optional hover zoom effect */
-#ideation img:hover {
+/* optional hover zoom effect over each photo */
+.UXideaimg img:hover {
   transform: scale(1.05);
 }
 
