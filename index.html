@@ -44,7 +44,7 @@
           <h2><span class="auto-type"></span></h2>
         </div>
 
-        <!-- cycles through the words “Programming,” “3d Printing,” and “Explorer”, -->
+        <!--the typed sentence”, -->
         <script>
           var typed = new Typed(".auto-type", {
             strings: ["Let's have a virtual coffee ☕ ^3000"], // last part pauses 3 seconds before deleting
@@ -60,16 +60,16 @@
 
 <section class="stacked-cards">
   <div class="card" data-target="#about">ABOUT</div>
-  <div class="card" data-target="#resume">RESUME</div>
+  <div class="card" data-target="#uxcasestudies">UX CASE STUDIES</div>
+  <div class="card" data-target="#visualdesigns">VISUAL DESIGNS</div>
+  <div class="card" data-target="#prototypes">PROTOTYPES</div>
   <div class="card" data-target="#projects">PROJECTS</div>
-  <div class="card" data-target="#printing">3D PRINTING</div>
-  <div class="card" data-target="#homestead">THE HOMESTEAD</div>
   <div class="card" data-target="#contact">CONTACT</div>
 </section>
 
 <section id="about" class="content-section">
 
-  <h2>About Me</h2>
+  <h2 class="section-title">About Me</h2>
       <p class = "info-box" >I’m a coffee enthusiast who loves creating, whether it’s 
                             a design, a layout, or something completely new. I believe 
                             good work should have both personality and clarity, showing 
@@ -82,10 +82,10 @@
                             but also reflects an understanding of how it’s built at every 
                             stage of the process.</p>
 
-  <h3> Skills </h3>
-      <p class = "info-box" > HTML, CSS, JS, FIGMA, PHOTOSHOP ETC</p>
+  <h3 class="section-title"> Skills </h3>
+      <p class = "info-box" > HTML, CSS, JS, FIGMA, PHOTOSHOP, FUSION360, CURA</p>
 
-  <h4>Education</h4>
+  <h4 class="section-title">Education</h4>
       <p class="info-box">Diploma, Applied Science for Engineering | Langara College</p>
 
       <div class ="info-box">
@@ -97,17 +97,9 @@
 </section>
 
 
-<section id="resume" class="content-section">
-  <h2>Resume</h2>
-      <p class = "info-box"> Details about your experience...</p>  
-</section>
 
-
-
-
-
-<section id="projects" class="content-section">
-  <h2>TripSync - UX Design Case Study</h2>
+<section id="uxcasestudies" class="content-section">
+  <h2 class="section-title">TripSync</h2>
 
   <div class = "info-box">
 
@@ -171,9 +163,9 @@
       <p>Preferred social features: Group messaging, task assignments</p>
       <p>Tools: Google Docs, Sheets/excel, Communication Platforms (Texting, Whatsapp, Facebook) </p>
 
-    </div>
-
+      </div>
   </div>
+  </section>
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
@@ -192,7 +184,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (button) button.classList.add("active-btn");
   }
 
-  // Handle clicking on any main card (About, Resume, Projects, etc.)
+  // Handle clicking on any main card (About, contact , Projects, etc.)
   cards.forEach(card => {
     card.addEventListener("click", () => {
       const targetId = card.getAttribute("data-target");
@@ -213,7 +205,7 @@ document.addEventListener("DOMContentLoaded", () => {
         target.scrollIntoView({ behavior: "smooth", block: "start" });
 
         // Auto-open "Problem Space" only when Projects is opened
-        if (targetId === "#projects") {
+        if (targetId === "#uxcasestudies") {
           setTimeout(() => showDetail("summary"), 250);
         }
       }
@@ -228,59 +220,29 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 </script>
+  
 
-
-
-
-
-
-  <h3>Personal</h3>
-  <p class = "info-box">Wedding Invitations, Themed Event Itinerary Project </p>
+<section id="visualdesigns" class="content-section">
+  <h2 class="section-title">Wedding Invitation</h2>
+  <p class = "info-box">Client: Jeanny</p>
 </section>
 
-<section id="printing" class="content-section">
-  <h2>3D Printing</h2>
-  <p class = "info-box">Stuff you’ve printed...</p>
+<section id="prototypes" class="content-section">
+  <h2 class="section-title">3D print #1</h2>
+  <p class = "info-box">fusion360 files and such</p>
 </section>
 
-<section id="homestead" class="content-section">
-  <h2>The Homestead</h2>
-  <p class = "info-box">Personal or side projects...</p>
+<section id="projects" class="content-section">
+  <h2 class="section-title">Project #1</h2>
+      <p class = "info-box"> Details about your homestead, miniprojects etc.</p>  
 </section>
 
 <section id="contact" class="content-section">
-  <h2>Contact</h2>
+  <h2 class="section-title">Contact me at annaacao@gmail.com</h2>
   <p class = "info-box"> Ways to reach you...</p>
 </section>
 
 
-
-
-<!-- === Show Only Clicked Section === -->
-<script>
-  document.querySelectorAll('.stacked-cards .card').forEach(card => {
-    card.addEventListener('click', () => {
-      const targetId = card.getAttribute('data-target');
-      const target = document.querySelector(targetId);
-
-      // Unlock scrolling
-      document.body.style.overflow = 'auto';
-
-      // Hide all sections first
-      document.querySelectorAll('.content-section').forEach(section => {
-        section.classList.remove('active');
-        section.style.display = 'none';
-      });
-
-      // Show only the clicked one
-      if (target) {
-        target.style.display = 'block';
-        setTimeout(() => target.classList.add('active'), 50);
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    });
-  });
-</script>
 
       <!-- Social icons -->
 

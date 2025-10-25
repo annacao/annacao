@@ -312,14 +312,11 @@ footer {
 #about h2,
 #about h3,
 #about h4,
-
-#resume h2, 
-
-#projects h2,
-#projects h3,
-
-#printing h2, 
-#homestead h2,
+#uxcasestudies h2,
+#uxcasestudies h3,
+#visualdesigns h2, 
+#prototypes h2,
+#projects h2, 
 #contact h2 { 
   background-color: #fcfcfc00;   /* box color is translucent */
   color: #8B5A3C;              /* text color */
@@ -329,16 +326,25 @@ footer {
   margin-top: 2rem;
   margin-bottom: 0; /*IMPORTANT LINE DO NOT ERASE*/
   border-radius: 0px;         /* rounded corners */
-  border:2px solid white; /*solid white border*/
+  border: 2px solid #8B5A3C; /*solid coffee border*/
+}
+
+/* Full-width title frame behind section headings */
+.section-title {
+  display: block;
+  background-color: #38220F; /* coffee brown */
+  color: #ffffff;
+  padding: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 2rem;
+  border: 2px solid #8B5A3C; /*solid coffee border*/
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
 }
 
 /*paragraph boxes */
-#about .info-box,
-#resume .info-box,
-#projects .info-box,
-#printing .info-box,
-#homestead .info-box,
-#contact .info-box {
+.info-box {
   background-color: transparent;
   color: #38220F; /*coffee colour*/
   font-family: "Montserrat";
@@ -346,7 +352,7 @@ footer {
   line-height: 2; /*vertical line spacing*/
   padding: 2rem;
   margin: 0;              /* removes gaps between paragraphs */
-  border: 2px solid white;
+  border: 2px solid #8B5A3C; /*solid coffee border*/
   border-top: none;       /* prevents double borders */
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
