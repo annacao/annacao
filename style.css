@@ -41,18 +41,19 @@ body {
 
 /*navigation links area/ or logo area*/
 /* Top branding bar */
-.site-branding {
-  width: 100%;
-  height: 8vh; /* scales with screen height */
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-color: #ffffff00;
-  border:solid black;
-  display: flex;
-  align-items: center;
-  z-index: 20;
+
+  .site-branding {
+  width: 100vw;       /* full visible viewport width */
+  height: 8vh;        /* percentage of visible viewport height */
+  
+  border: 2px solid black;
+  box-sizing: border-box; /* border stays inside the defined size */
+  
+  margin: 0;
+  padding: 0;
+  background: #C0AFA2;
 }
+
 
 /*declare logo here*/
 
@@ -137,7 +138,8 @@ h2 {
   justify-content: flex-start;
   gap: 1.2rem;
   position: relative;
-  margin-top: calc(8vh + 0vh);
+  margin-top:0;
+  /*margin-top: calc(8vh + 0vh);*/
   border:solid rgb(168, 40, 40);
 }
 
@@ -364,6 +366,10 @@ footer {
   font-size: 2rem;
   border: 2px solid #8B5A3C; /*solid coffee border*/
   box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+
+  width:100%;
+  box-sizing: border-box; /* Prevent border from overflowing */
+  
   
 }
 
