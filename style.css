@@ -496,14 +496,16 @@ footer {
 @media (max-width: 600px) {
 
   /*moves social icons to the center*/
+  @media (max-width: 600px) {
   .socials {
-    position: absolute; /* still positioned relative to header */
-    top: 1rem;          /* distance from top */
-    left: 50%;          /* move to horizontal center */
-    transform: translateX(-50%); /* actually center it */
-    justify-content: center;     /* center icons inside the container */
-    gap: 1rem;                  /* spacing between icons */
+    position: static; /* default flow */
+    margin-top: 1rem;
+    gap: 1rem;
+    transform: none;
+    left: auto;
+    top: auto;
   }
+}
 
 
   /* " Hi, I'm Anna " Space */
