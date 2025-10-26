@@ -43,9 +43,9 @@ body {
 /* Top branding bar */
 
   .site-branding {
-  width: 100vw;       /* full visible viewport width */
+  width: 100%;       /* full visible viewport width */
   height: 8vh;        /* percentage of visible viewport height */
-  border: 2px solid rgb(255, 255, 255);
+  border: 2px solid rgb(44, 44, 44);
   box-sizing: border-box; /* border stays inside the defined size */
   margin: 0;
   padding: 0;
@@ -85,7 +85,7 @@ header {
 }
 
 .hi-im-anna {
-  filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.8));
+  filter: drop-shadow(3px 5px 4px rgba(0, 1, 0, 1));
   margin-top:-3rem;
   z-index:30;
 }
