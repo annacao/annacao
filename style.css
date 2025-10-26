@@ -45,10 +45,8 @@ body {
   .site-branding {
   width: 100vw;       /* full visible viewport width */
   height: 8vh;        /* percentage of visible viewport height */
-  
-  border: 2px solid black;
+  border: 2px solid rgb(255, 255, 255);
   box-sizing: border-box; /* border stays inside the defined size */
-  
   margin: 0;
   padding: 0;
   background: #C0AFA2;
@@ -60,7 +58,7 @@ body {
 
 
 
-/* ===== HEADER BOX  container */
+/* ===== middle part container */
 
 header {
   background: linear-gradient(to bottom, #C0AFA2 0%, transparent 100%);
@@ -71,7 +69,6 @@ header {
   padding: 0;
   border-radius: 0;
   min-height: 350px;
-  border:solid black;
   
 }
 
@@ -83,13 +80,11 @@ header {
   animation: neonGradient 5s infinite alternate;
   z-index: 1;
   padding: clamp(1rem, 2vw, 2rem);
-  border:solid black;
   margin-top: clamp(0rem, 6vh, 3rem);
   
 }
 
 .hi-im-anna {
-  border:solid black;
   filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.8));
   margin-top:-3rem;
   z-index:30;
@@ -117,7 +112,6 @@ h2 {
   color: #8B5A3C; /*38220F for coffee colour*/
   text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.5);
   font-size: clamp(20px, 4vw, 35px);
-  border:solid black;
   margin-top: -2rem;
   margin-right: -1.8rem;
 }
@@ -140,7 +134,7 @@ h2 {
   position: relative;
   margin-top:0;
   /*margin-top: calc(8vh + 0vh);*/
-  border:solid rgb(168, 40, 40);
+  /*border:solid rgb(3, 137, 247);*/
 }
 
 /* Wave animation keyframes */
@@ -296,7 +290,7 @@ footer {
   gap: 5rem;
   position: relative;
   perspective: 1500px;
-  border:solid black;
+  
 }
 
 .stacked-cards .card {
