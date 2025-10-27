@@ -42,18 +42,32 @@ body {
 /*navigation links area/ or logo area*/
 /* Top branding bar */
 
-  .site-branding {
-  width: 100%;       /* full visible viewport width */
-  height: 8vh;        /* percentage of visible viewport height */
-  border: 2px solid rgb(44, 44, 44);
-  box-sizing: border-box; /* border stays inside the defined size */
-  margin: 0;
-  padding: 0;
+.site-branding {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem; /* adds some breathing room */
+  /*border: 2px solid rgb(44, 44, 44);*/
   background: #C0AFA2;
+  box-sizing: border-box;
 }
 
+.site-branding img {
+  width: clamp(80px, 8vw, 160px);
+  height: auto;
+  padding:.5rem;
+}
 
-/*declare logo here*/
+@media (max-width: 600px) {
+  .site-branding {
+    justify-content: center; /* centers the logo on small screens */
+  }
+
+  .site-branding img {
+    padding-left: 1; /* spacing around the logo */
+  }
+}
+
 
 
 
