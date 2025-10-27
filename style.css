@@ -60,7 +60,7 @@ body {
 
 @media (max-width: 600px) {
   .site-branding {
-    justify-content: center; /* centers the logo on small screens */
+    justify-content: left; /* position of logo on small screens */
   }
 
   .site-branding img {
@@ -146,7 +146,7 @@ h2 {
   justify-content: flex-start;
   gap: 1.2rem;
   position: relative;
-  margin-top:0;
+  margin-top:-2rem;
   /*margin-top: calc(8vh + 0vh);*/
   /*border:solid rgb(3, 137, 247);*/
 }
