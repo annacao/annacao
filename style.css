@@ -126,8 +126,9 @@ h2 {
   color: #8B5A3C; /*38220F for coffee colour*/
   text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.5);
   font-size: clamp(20px, 4vw, 35px);
-  margin-top: -2rem;
-  margin-right: -1.8rem;
+  margin-top: clamp(-0.5rem, -3vw, -2rem); /*space above the lets have a virtual coffee text*/
+  margin-right: -1rem;
+  margin-left: -1rem;
 }
 
 /*the blinking curser in the header*/
@@ -308,8 +309,8 @@ footer {
 }
 
 .stacked-cards .card {
-  width: clamp(170px, 55vw, 250px);
-  height: clamp(245px, 70vw, 360px);
+  width: clamp(170px, 50vw, 250px);
+  height: clamp(225px, 65vw, 360px);
   border-radius: 2rem;
   border: 4px solid rgba(255, 255, 255, 0.5); /*border around the card*/
   background-color: #83796b;
@@ -577,8 +578,8 @@ footer {
 
   .stacked-cards .card {
   /* size control */
-  flex: 0 0 clamp(170px, 40vw, 200px);
-  height: clamp(220px, 60vw, 300px);
+  flex: 0 0 clamp(140px, 38vw, 200px);
+  height: clamp(210px, 55vw, 300px);
 
   /* swipe + layout */
   scroll-snap-align: center;
