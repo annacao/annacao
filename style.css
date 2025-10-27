@@ -413,7 +413,7 @@ footer {
   margin: 0rem auto; /* centers the image in its container */
 }
 
-/* ===== UX CASE STUDY SECTION ============================================================ */
+/* ===== UX/ UI CASE STUDY SECTION ============================================================ */
 .UXcase-buttons {
   display: flex;
   flex-wrap: wrap;
@@ -507,6 +507,25 @@ footer {
   border-radius: 15px;         /* optional — rounds corners */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* optional subtle shadow */
 }
+
+/* ========================================================= VISUAL DESIGNS SECTION ============================================================ */
+
+.jeanny-weddingimgs {
+  display: flex;
+  justify-content: center; /* centers horizontally */
+  align-items: center;     /* centers vertically if different heights */
+  gap: 4rem;               /* space between images */
+  flex-wrap: wrap;         /* wrap nicely on smaller screens */
+  margin-top: 0rem;
+}
+
+.jeanny-weddingimgs img {
+  width: clamp(180px, 25vw, 300px); /* keeps images responsive */
+  height: auto;
+
+}
+
+
 
 /* smooth fade-in animation */
 @keyframes fadeIn {
