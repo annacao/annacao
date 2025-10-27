@@ -127,8 +127,7 @@ h2 {
   text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.5);
   font-size: clamp(20px, 4vw, 35px);
   margin-top: clamp(-0.5rem, -3vw, -5rem); /*space above the lets have a virtual coffee text*/
-  margin-right: -1rem;
-  margin-left: -1rem;
+  
   
 }
 
@@ -364,6 +363,7 @@ footer {
   margin-bottom: 0; /*IMPORTANT LINE DO NOT ERASE*/
   border-radius: 0px;         /* rounded corners */
   border: 2px solid #8B5A3C; /*solid coffee border*/
+  
 }
 
 /* Full-width title frame behind section headings */
