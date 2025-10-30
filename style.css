@@ -25,17 +25,28 @@
   transition: opacity 0.4s ease 0.1s;
 }
 
-html,
-body {
-  height: 100%; /* make the body take full viewport height */
-  margin: 0;
-  padding: 0;
-  font-family: "IBM Plex Mono", monospace;
-  background: #ffffff;
-  color: #ffffff;
-  overflow-x: hidden; /* hides horizontal scroll */
-  overflow-y: auto; 
+/* Page starts locked (no scrolling on load) */
+body.lock-scroll {
+  overflow: hidden;
+  height: 100vh; /* ensures full-screen layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* evenly space header/cards/social/footer */
 }
+
+/* Once unlocked, normal scroll resumes */
+body {
+  overflow-x: hidden;
+  overflow-y: auto;
+  min-height: 100vh;
+}
+
+/* Keeps social icons + footer visible and stable */
+.socials,
+footer {
+  flex-shrink: 0;
+}
+
 
 
 
@@ -46,14 +57,12 @@ body {
   width: 100%;
   display: flex;
   align-items: center;
-  padding: 0.5rem; /* adds some breathing room */
-  /*border: 2px solid rgb(44, 44, 44);*/
-  background: #C0AFA2;
+  padding: 0.5rem; 
   box-sizing: border-box;
 }
 
 .site-branding img {
-  width: clamp(80px, 8vw, 160px);
+  width: clamp(80px, 8vw, 110px);
   height: auto;
   padding:.5rem;
 }
@@ -75,60 +84,73 @@ body {
 /* ===== middle part container */
 
 header {
-  background: linear-gradient(to bottom, #C0AFA2 0%, transparent 100%);
   display: flex;
   justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 350px;
+  padding: 2rem 1rem;
   position: relative;
   overflow: visible;
+  
+
+}
+
+/* container for image + hi im anna + typed words */
+.header-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem; /* consistent spacing between elements */
+  position: relative;
+  margin: 0; /* reset weird offsets */
   padding: 0;
-  border-radius: 0;
-  min-height: 350px;
   
 }
 
 /* Profile image */
 .profile-pic {
-  width: clamp(140px, 28vw, 245px);
+  width: clamp(140px, 28vw, 150px);
   height: auto;
   filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
   animation: neonGradient 5s infinite alternate;
   z-index: 1;
-  padding: clamp(1rem, 2vw, 2rem);
-  margin-top: clamp(0rem, 6vh, 3rem);
+  margin-bottom: 0rem; /* spacing below image */
   
 }
 
-.hi-im-anna {
-  filter: drop-shadow(3px 5px 4px rgba(0, 1, 0, 1));
-  margin-top:-3rem;
-  z-index:30;
-}
-h1 {
-  font-size: clamp(29.0px, 5.7vw, 50.1px);
-  color:#fffefd;
-  z-index:30;
+#intro-heading {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: clamp(30px, 5vw, 45px);
+  color: rgb(255, 255, 255) !important; /*important! overrides anything thats blocking it from happening (not ideal)*/
+  margin: 0;
+  z-index: 2;
+  text-shadow: 2px 2px 4px rgba(0,0,0,1);
+  
 }
 
+#intro-subheading {
+  font-size: clamp(24px, 4.5vw, 28px);
+  color: rgb(255, 255, 255) !important; /*important! overrides anything thats blocking it from happening (not ideal)*/
+  text-shadow: 2px 2px 3px rgba(0,0,0,1);
+  z-index:30;
+  margin-top: 0rem;
+  
+}
 
-/* lets have a virtual coffee container */
-.header-text {
+#typewriter {
+  font-size: clamp(12px, 2vw, 12px);
+  display:flex;
+  color:#705e47;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
-  z-index: 1;
-  padding-bottom: 0rem;
+  justify-content:center;
+  
+  margin-top:2rem;
 }
-
-
-/* lets have a virtual coffee text */
-h2 {
-  color: #8B5A3C; /*38220F for coffee colour*/
-  text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.5);
-  font-size: clamp(20px, 4vw, 35px);
-  margin-top: clamp(-0.5rem, -3vw, -5rem); /*space above the lets have a virtual coffee text*/
-  
-  
+#typewriter h2 { /*resets the spacing because it was forked*/
+  margin: 0;
+  padding: 0;
 }
 
 /*the blinking curser in the header*/
@@ -138,21 +160,6 @@ h2 {
   z-index: 1;
 }
 
-
-/* container for image + hi im anna + typed words */
-.header-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 1.2rem;
-  position: relative;
-  margin-top:-2rem;
-  margin-bottom:rem;
-  
-  /*margin-top: calc(8vh + 0vh);*/
-  /*border:solid rgb(3, 137, 247);*/
-}
 
 /* Wave animation keyframes */
 @keyframes waveHand {
@@ -189,7 +196,8 @@ h2 {
   justify-content: center;
   display: flex;
   gap: 1rem; /* space between icons */
-  margin-bottom: 2rem;
+  margin-top: 4rem;
+  margin-bottom: .1rem;
   z-index: 5;
 }
 
@@ -197,6 +205,7 @@ h2 {
 .social-icon {
   width: 40px;
   height: 40px;
+  display: block;
   transition: transform 0.3s ease;
   animation: slowSpin 10s linear infinite; /* slow rotation */
   cursor: pointer;
@@ -262,11 +271,12 @@ h2 {
   }
 }
 
-/* ===== Sections ===== */
+/* ===== card container ===== */
 section {
-  padding: 2rem;
+  padding: 0rem;
   max-width: 1400px;
   margin: auto;
+  
 }
 
 
@@ -300,19 +310,30 @@ footer {
 
 /* ===== STACKED CARDS SECTION ===== */
 .stacked-cards {
+  width: 100%;
+  max-width: 1400px;
+  height: clamp(180px, 25vh, 280px);
+  min-height: clamp(250px, 40vh, 310px);
   display: flex;
   justify-content: center;
-  align-items: flex-end;
-  margin-top: -2rem;
-  gap: 5rem;
+  align-items: center !important;
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+  gap: clamp(1rem, 4vw, 5rem);
   position: relative;
   perspective: 1500px;
-  
+  align-items:stretch; /*center items/cards vertically*/
+  flex-wrap: nowrap; /*keep one row*/
+  overflow: hidden;  
+  box-sizing: border-box;
+  z-index: 10;
+  overflow: visible; /* does not clip whatevers inside the container*/
 }
 
 .stacked-cards .card {
-  width: clamp(170px, 50vw, 222px);
-  height: clamp(225px, 65vw, 320px);
+  flex: 0 1 clamp(120px, 14%, 200px); /* scale relative to container width */
+  aspect-ratio: 2 / 3; /* keeps proportional size */
+  max-height: 90%; /* ensures it never exceeds container */
   border-radius: 2rem;
   border: 4px solid rgba(255, 255, 255, 0.5); /*border around the card*/
   background-color: #83796b;
@@ -327,7 +348,7 @@ footer {
   position: relative;
   transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
   box-shadow: -6px 30px 15px 10px rgba(10, 10, 10, 0.2);
-  margin-top: 0; /* move cards upward */
+  
 
 }
 
@@ -653,12 +674,247 @@ footer {
 
 
 
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "IBM Plex Mono", monospace;
+
+  /* 🌈 Full-page gradient background */
+  background: linear-gradient(
+    to bottom,
+    #cfbeb0 30%,
+    #ffffff 100%
+  );
+
+
+  color: #ffffff;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+
+
+/*navigation links area/ or logo area*/
+/* Top branding bar */
+
+.site-branding {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem; 
+  box-sizing: border-box;
+}
+
+.site-branding img {
+  width: clamp(80px, 8vw, 110px);
+  height: auto;
+  padding:.5rem;
+}
+
+@media (max-width: 600px) {
+  .site-branding {
+    justify-content: left; /* position of logo on small screens */
+  }
+
+  .site-branding img {
+    padding-left: 1; /* spacing around the logo */
+  }
+}
 
 
 
 
 
+/* ===== middle part container */
 
-
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 350px;
+  padding: 2rem 1rem;
+  position: relative;
+  overflow: visible;
   
+
+}
+
+/* container for image + hi im anna + typed words */
+.header-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem; /* consistent spacing between elements */
+  position: relative;
+  margin: 0; /* reset weird offsets */
+  padding: 0;
+  
+}
+
+/* Profile image */
+.profile-pic {
+  width: clamp(140px, 28vw, 150px);
+  height: auto;
+  filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
+  animation: neonGradient 5s infinite alternate;
+  z-index: 1;
+  margin-bottom: 0rem; /* spacing below image */
+  
+}
+
+#intro-heading {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: clamp(30px, 5vw, 45px);
+  color: rgb(255, 255, 255) !important; /*important! overrides anything thats blocking it from happening (not ideal)*/
+  margin: 0;
+  z-index: 2;
+  text-shadow: 2px 2px 4px rgba(0,0,0,1);
+  
+}
+
+#intro-subheading {
+  font-size: clamp(24px, 4.5vw, 28px);
+  color: rgb(255, 255, 255) !important; /*important! overrides anything thats blocking it from happening (not ideal)*/
+  text-shadow: 1px 1px 1px rgba(0,0,0,1);
+  z-index:30;
+  margin-top: 0rem;
+  
+}
+
+#typewriter {
+  font-size: clamp(12px, 2vw, 12px);
+  display:flex;
+  color:#705e47;
+  display: flex;
+  justify-content:center;
+  
+  margin-top:2rem;
+}
+#typewriter h2 { /*resets the spacing because it was forked*/
+  margin: 0;
+  padding: 0;
+}
+
+/*the blinking curser in the header*/
+.typed-cursor {
+  color: #141414;
+  animation: blink 0.8s infinite; /* slower or faster blink */
+  z-index: 1;
+}
+
+
+/* Wave animation keyframes */
+@keyframes waveHand {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(14deg);
+  }
+  20% {
+    transform: rotate(-8deg);
+  }
+  30% {
+    transform: rotate(14deg);
+  }
+  40% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  60% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+/* Social icons container - bottom centered */
+.socials {
+  position: relative; 
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  gap: 1rem; /* space between icons */
+  margin-top: .1rem;
+  margin-bottom: .1rem;
+  z-index: 1;
+  
+}
+
+/* Each icon */
+.social-icon {
+  width: 40px;
+  height: 40px;
+  display: block;
+  transition: transform 0.3s ease;
+  animation: slowSpin 10s linear infinite; /* slow rotation */
+  cursor: pointer;
+}
+
+
+/* Particles */
+.particle {
+  position: fixed;
+  width: 5px; /* a bit bigger so they are visible */
+  height: 5px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  animation: drift linear infinite;
+  z-index: 0;
+  pointer-events: none; /*makes the particles "invisible to clicks"*/
+}
+
+/*-------------KEY FRAMES PASTED BELOW-------------*/
+
+/* Spinning animation */
+@keyframes slowSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Neon glow (IMAGE GRADIENT) keyframes */
+@keyframes neonGradient {
+  0% {
+    filter: drop-shadow(0 0 10px rgba(247, 247, 247, 0.7))
+      drop-shadow(0 0 10px rgba(212, 153, 64, 0.87));
+  }
+  25% {
+    filter: drop-shadow(0 0 10px rgba(237, 245, 245, 0.87))
+      drop-shadow(0 0 10px rgba(240, 211, 167, 0.87));
+  }
+  50% {
+    filter: drop-shadow(0 0 10px rgba(212, 153, 64, 0.87))
+      drop-shadow(0 0 10px rgba(247, 247, 247, 0.7));
+  }
+  75% {
+    filter: drop-shadow(0 0 10px rgba(237, 245, 245, 0.87))
+      drop-shadow(0 0 10px rgba(240, 211, 167, 0.87));
+  }
+  100% {
+    filter: drop-shadow(0 0 10px rgba(212, 153, 64, 0.87))
+      drop-shadow(0 0 10px rgba(247, 247, 247, 0.7));
+  }
+}
+
+@keyframes drift {
+  0% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--x), var(--y));
+    opacity: 0;
+  }
+}
 

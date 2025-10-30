@@ -27,5 +27,35 @@ window.addEventListener("load", () => {
     container.appendChild(particle);
   }
 
-  
+
+// ===== SCROLL LOCK FUNCTIONALITY =====
+  const cards = document.querySelectorAll(".stacked-cards .card");
+  const sections = document.querySelectorAll(".content-section");
+
+  // Page starts locked (set this class in HTML: <body class="lock-scroll">)
+  document.body.classList.add("lock-scroll");
+
+  cards.forEach(card => {
+    card.addEventListener("click", () => {
+      // Unlock scroll
+      document.body.classList.remove("lock-scroll");
+
+      const targetId = card.getAttribute("data-target");
+      const target = document.querySelector(targetId);
+
+      // Hide all sections first
+      sections.forEach(section => {
+        section.classList.remove("active");
+        section.style.display = "none";
+      });
+
+      // Show clicked section
+      if (target) {
+        target.style.display = "block";
+        setTimeout(() => target.classList.add("active"), 20);
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    });
+  });
 });
+
